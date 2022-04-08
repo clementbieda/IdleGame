@@ -32,15 +32,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< Updated upstream
     filterMode: 0
-=======
-    filterMode: 1
->>>>>>> Stashed changes
-=======
-    filterMode: 1
->>>>>>> parent of 88a7db9 (truc pixe lsize)
     aniso: 1
     mipBias: 0
     wrapU: 1
