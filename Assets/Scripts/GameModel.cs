@@ -51,6 +51,37 @@ public class GameModel
     private FloatObservable baratinagePrice;
     private FloatObservable upgradeCharactersPrice;
 
+    public int shopPrizeTmpManager;
+    public int shopPrizeVenteX2;
+    public int shopPrizeFrequence;
+    public int shopPrizeBaratinage;
+    public int shopPrizeUpgradeCharacter;
+
+    internal FloatObservable GetTempManager()
+    {
+        return tempManagerPrice;
+    }
+
+    internal FloatObservable GetVenteX2()
+    {
+        return VenteX2Price;
+    }
+
+    internal FloatObservable GetFrequence()
+    {
+        return frequencePrice;
+    }
+
+    internal FloatObservable GetBaratinage()
+    {
+        return baratinagePrice;
+    }
+
+    internal FloatObservable GetUpgradeCharacter()
+    {
+        return upgradeCharactersPrice;
+    }
+
     internal FloatObservable GetWater()
     {
         return waterPrice;
@@ -97,6 +128,8 @@ public class GameModel
         return currentMoney;
     }
 
+    //Améliorations sur les items
+
     internal void UpgradeWater()
     {
         if (currentMoney.GetValue() >= shopPrizeWater)
@@ -142,22 +175,26 @@ public class GameModel
         }
     }
 
+    // Click sur le bouton
+
     public void Hit()
     {
         currentMoney.Add(hitPower);
     }
+
+    //Améliorations sur les magasins
 
     public void DelayManager()
     {
         
     }
 
-    public void VitesseClients()
+    public void FrequenceClients()
     {
 
     }
 
-    public void FrequenceClients()
+    public void Baratinage()
     {
 
     }
@@ -166,5 +203,10 @@ public class GameModel
     public bool CheckX2Win()
     {
         return rnd.Next() < thresholdWinX2;
+    }
+
+    public void UpgradeCharacters()
+    {
+        
     }
 }
