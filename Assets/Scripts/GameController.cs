@@ -97,10 +97,5 @@ public class GameController : MonoBehaviour
         _gameModel.Hit();
     }
 
-    
-
-    public void UpgradeManager()
-    {
-        _gameModel.BuyManager();
-    }
+  
 }
