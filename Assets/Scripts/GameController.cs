@@ -33,6 +33,16 @@ public class GameController : MonoBehaviour
 
     //Upgrades
     public Text upText;
+    
+    //Spawn Characters
+    public GameObject ennemyPrefab;
+    public Vector3 spawnRange;
+    public int ennemyWave;
+    public int spawnTime;
+    public bool isInGame = true;
+
+    public float waveTime;
+    // Start is called before the first frame update
 
 
     // Start is called before the first frame update
@@ -53,7 +63,27 @@ public class GameController : MonoBehaviour
         _upgradeShieldButton.onClick.AddListener(UpgradeShield);
 
         _testMoneyAdd.onClick.AddListener(TestAddMoney);
-       
+
+        //On appelle la fonction qui génère les vagues dans le start
+        StartCoroutine(WaveGenerate());
+
+    }
+
+    IEnumerator WaveGenerate()
+    {
+        while (isInGame)
+        {
+            //On fait spawn un ennemi à chaque itération dans la boucle
+            for (int i = 0; i < ennemyWave; i++)
+            {
+                Vector3 spawnPos = new Vector3(0,0,0);
+                Instantiate(ennemyPrefab, spawnPos, Quaternion.identity);
+                yield return new WaitForSeconds(spawnTime);
+            }
+
+            //On laisse un temps entre chaque vague de spawn
+            yield return new WaitForSeconds(waveTime);
+        }
     }
 
     private void TestAddMoney()
@@ -97,5 +127,5 @@ public class GameController : MonoBehaviour
         _gameModel.Hit();
     }
 
-  
+    
 }
