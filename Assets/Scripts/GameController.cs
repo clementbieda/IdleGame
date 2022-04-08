@@ -89,18 +89,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Click
        
-        _gameModel.moneyIncreasePerSecond = _gameModel.x * Time.deltaTime;
-        
-
-        //Buy
-
-        TextAmount1.text = "Tier 1: " + _gameModel.AmountWater + " mps: " + _gameModel.profit1 + "/s";
-        TextAmount2.text = "Tier 2: " + _gameModel.Amount2 + " mps: " + _gameModel.profit2 + "/s";
-
-        //Upgrade
-        upText.text = "Cost :" + _gameModel.upPrize + " $";
     }
 
     public void ClicOnButton()
@@ -108,10 +97,5 @@ public class GameController : MonoBehaviour
         _gameModel.Hit();
     }
 
-    
-
-    public void UpgradeManager()
-    {
-        _gameModel.BuyManager();
-    }
+  
 }

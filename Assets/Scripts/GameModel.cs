@@ -9,6 +9,12 @@ public class GameModel
 
     public float thresholdWinX2;
 
+    const float PERCENT_UPGRADE_WATER = 0.15f;
+    const float PERCENT_UPGRADE_CAN = 0.24f;
+    const float PERCENT_UPGRADE_BANDAGE = 0.3f;
+    const float PERCENT_UPGRADE_GUN = 0.41f;
+    const float PERCENT_UPGRADE_SHIELD = 0.5f;
+
     //Magasins
     public FloatObservable currentMoney;
     public float hitPower;
@@ -17,8 +23,11 @@ public class GameModel
 
 
     //Shop
-    public int shopPrize1;
-    public int shopPrize2;
+    public int shopPrizeWater;
+    public int shopPrizeCan;
+    public int shopPrizeBandage;
+    public int shopPrizeGun;
+    public int shopPrizeShield;
 
     private FloatObservable waterPrice;
     private FloatObservable canPrice;
@@ -34,14 +43,6 @@ public class GameModel
     public int AmountGun;
     public int AmountShield;
     public int profit1;
-
-    
-    public int Amount2;
-    public int profit2;
-
-
-    //Upgrades
-    public int upPrize;
 
     internal FloatObservable GetWater()
     {
@@ -91,46 +92,46 @@ public class GameModel
 
     internal void UpgradeWater()
     {
-        if (currentMoney.GetValue() >= shopPrize1)
+        if (currentMoney.GetValue() >= shopPrizeWater)
         {
             AmountWater++;
-            waterPrice.Add(0.15f * waterPrice.GetValue());
+            waterPrice.Add(PERCENT_UPGRADE_WATER * waterPrice.GetValue());
         }
     }
 
     internal void UpgradeCan()
     {
-        if (currentMoney.GetValue() >= shopPrize1)
+        if (currentMoney.GetValue() >= shopPrizeCan)
         {
             AmountCan++;
-            canPrice.Add(0.26f * canPrice.GetValue());
+            canPrice.Add(PERCENT_UPGRADE_CAN * canPrice.GetValue());
         }
     }
 
     internal void UpgradeBandage()
     {
-        if (currentMoney.GetValue() >= shopPrize1)
+        if (currentMoney.GetValue() >= shopPrizeBandage)
         {
             AmountBandage++;
-            bandagePrice.Add(0.35f * bandagePrice.GetValue());
+            bandagePrice.Add(PERCENT_UPGRADE_BANDAGE * bandagePrice.GetValue());
         }
     }
 
     internal void UpgradeGun()
     {
-        if (currentMoney.GetValue() >= shopPrize1)
+        if (currentMoney.GetValue() >= shopPrizeGun)
         {
             AmountGun++;
-            gunPrice.Add(0.45f * gunPrice.GetValue());
+            gunPrice.Add(PERCENT_UPGRADE_GUN * gunPrice.GetValue());
         }
     }
 
     internal void UpgradeShield()
     {
-        if (currentMoney.GetValue() >= shopPrize1)
+        if (currentMoney.GetValue() >= shopPrizeShield)
         {
             AmountShield++;
-            shieldPrice.Add(0.6f * shieldPrice.GetValue());
+            shieldPrice.Add(PERCENT_UPGRADE_SHIELD * shieldPrice.GetValue());
         }
     }
 
@@ -139,31 +140,9 @@ public class GameModel
         currentMoney.Add(hitPower);
     }
 
-
-    public void BuyManager()
-    {
-        if (currentMoney.GetValue() >= shopPrize1)
-        {
-            currentMoney.Add(-shopPrize1);
-            profit1 += 1;
-            x += 1;
-            shopPrize1 += 25;
-        }
-    }
-
     public void DelayManager()
     {
         
-    }
-
-    public void UpgradeMultiplierVente()
-    {
-        if (currentMoney.GetValue() >= upPrize)
-        {
-            currentMoney.Add(-upPrize);
-            hitPower *= 2;
-            upPrize *= 3;
-        }
     }
 
     public void VitesseClients()
