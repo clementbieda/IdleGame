@@ -17,8 +17,7 @@ public class GameModel
 
 
     //Shop
-    public int shopPrize1;
-    public int shopPrize2;
+    public int shopPrize;
 
     private FloatObservable waterPrice;
     private FloatObservable canPrice;
@@ -34,14 +33,6 @@ public class GameModel
     public int AmountGun;
     public int AmountShield;
     public int profit1;
-
-    
-    public int Amount2;
-    public int profit2;
-
-
-    //Upgrades
-    public int upPrize;
 
     internal FloatObservable GetWater()
     {
@@ -91,7 +82,7 @@ public class GameModel
 
     internal void UpgradeWater()
     {
-        if (currentMoney.GetValue() >= shopPrize1)
+        if (currentMoney.GetValue() >= shopPrize)
         {
             AmountWater++;
             waterPrice.Add(0.15f * waterPrice.GetValue());
@@ -100,7 +91,7 @@ public class GameModel
 
     internal void UpgradeCan()
     {
-        if (currentMoney.GetValue() >= shopPrize1)
+        if (currentMoney.GetValue() >= shopPrize)
         {
             AmountCan++;
             canPrice.Add(0.26f * canPrice.GetValue());
@@ -109,7 +100,7 @@ public class GameModel
 
     internal void UpgradeBandage()
     {
-        if (currentMoney.GetValue() >= shopPrize1)
+        if (currentMoney.GetValue() >= shopPrize)
         {
             AmountBandage++;
             bandagePrice.Add(0.35f * bandagePrice.GetValue());
@@ -118,7 +109,7 @@ public class GameModel
 
     internal void UpgradeGun()
     {
-        if (currentMoney.GetValue() >= shopPrize1)
+        if (currentMoney.GetValue() >= shopPrize)
         {
             AmountGun++;
             gunPrice.Add(0.45f * gunPrice.GetValue());
@@ -127,7 +118,7 @@ public class GameModel
 
     internal void UpgradeShield()
     {
-        if (currentMoney.GetValue() >= shopPrize1)
+        if (currentMoney.GetValue() >= shopPrize)
         {
             AmountShield++;
             shieldPrice.Add(0.6f * shieldPrice.GetValue());
@@ -142,28 +133,18 @@ public class GameModel
 
     public void BuyManager()
     {
-        if (currentMoney.GetValue() >= shopPrize1)
+        if (currentMoney.GetValue() >= shopPrize)
         {
-            currentMoney.Add(-shopPrize1);
+            currentMoney.Add(-shopPrize);
             profit1 += 1;
             x += 1;
-            shopPrize1 += 25;
+            shopPrize += 25;
         }
     }
 
     public void DelayManager()
     {
         
-    }
-
-    public void UpgradeMultiplierVente()
-    {
-        if (currentMoney.GetValue() >= upPrize)
-        {
-            currentMoney.Add(-upPrize);
-            hitPower *= 2;
-            upPrize *= 3;
-        }
     }
 
     public void VitesseClients()
