@@ -44,6 +44,13 @@ public class GameModel
     public int AmountShield;
     public int profit1;
 
+    //Upgrades magasins
+    private FloatObservable tempManagerPrice;
+    private FloatObservable VenteX2Price;
+    private FloatObservable frequencePrice;
+    private FloatObservable baratinagePrice;
+    private FloatObservable upgradeCharactersPrice;
+
     internal FloatObservable GetWater()
     {
         return waterPrice;

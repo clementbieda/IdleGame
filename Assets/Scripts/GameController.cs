@@ -7,7 +7,9 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     private GameModel _gameModel;
-
+    
+    
+    //Boutons d'améliorations pour les items
     [SerializeField] private Button _upgradeWaterButton;
     [SerializeField] private Button _upgradeCanButton;
     [SerializeField] private Button _upgradeBandageButton;
@@ -27,18 +29,12 @@ public class GameController : MonoBehaviour
     public FloatView gunView;
     public FloatView shieldView;
 
-    //Amount
-    public Text TextAmount1;
-    public Text TextAmount2;
 
-    //Upgrades
-    public Text upText;
     
     //Spawn Characters
-    public GameObject ennemyPrefab;
-    public Vector3 spawnRange;
+    public GameObject CharacterPrefab;
     public int ennemyWave;
-    public int spawnTime;
+    public float spawnTime = 1.0f;
     public bool isInGame = true;
 
     public float waveTime;
@@ -76,8 +72,8 @@ public class GameController : MonoBehaviour
             //On fait spawn un ennemi à chaque itération dans la boucle
             for (int i = 0; i < ennemyWave; i++)
             {
-                Vector3 spawnPos = new Vector3(0,0,0);
-                Instantiate(ennemyPrefab, spawnPos, Quaternion.identity);
+                Vector3 spawnPos = new Vector3(5,2,0);
+                Instantiate(CharacterPrefab, spawnPos, Quaternion.identity);
                 yield return new WaitForSeconds(spawnTime);
             }
 
