@@ -51,7 +51,7 @@ public class GameModel
     private FloatObservable baratinagePrice;
     private FloatObservable upgradeCharactersPrice;
 
-    public int shopPrizeTmpManager;
+    public int shopPrizeTempManager;
     public int shopPrizeVenteX2;
     public int shopPrizeFrequence;
     public int shopPrizeBaratinage;
@@ -186,17 +186,26 @@ public class GameModel
 
     public void DelayManager()
     {
-        
+        if (currentMoney.GetValue() >= shopPrizeTempManager)
+        {
+
+        }
     }
 
     public void FrequenceClients()
     {
+        if (currentMoney.GetValue() >= shopPrizeFrequence)
+        {
 
+        }
     }
 
     public void Baratinage()
     {
+        if (currentMoney.GetValue() >= shopPrizeBaratinage)
+        {
 
+        }
     }
 
 
@@ -207,6 +216,9 @@ public class GameModel
 
     public void UpgradeCharacters()
     {
-        
+        if (currentMoney.GetValue() >= shopPrizeUpgradeCharacter)
+        {
+
+        }
     }
 }
