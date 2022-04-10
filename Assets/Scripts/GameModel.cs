@@ -15,6 +15,12 @@ public class GameModel
     const float PERCENT_UPGRADE_GUN = 0.41f;
     const float PERCENT_UPGRADE_SHIELD = 0.5f;
 
+    const float PERCENT_UPGRADE_TEMP_MANAGER = 0.15f;
+    const float PERCENT_UPGRADE_VENTEX2 = 0.24f;
+    const float PERCENT_UPGRADE_FREQUENCE = 0.3f;
+    const float PERCENT_UPGRADE_BARATINAGE = 0.41f;
+    const float PERCENT_UPGRADE_CHARACTERS = 0.5f;
+
     //Magasins
     public FloatObservable currentMoney;
     public float hitPower;
@@ -194,6 +200,7 @@ public class GameModel
         if (currentMoney.GetValue() >= shopPrizeTempManager)
         {
             AmountTempManager++;
+            //tempManagerPrice.Add()
         }
     }
 
@@ -223,7 +230,7 @@ public class GameModel
     {
         if (currentMoney.GetValue() >= shopPrizeUpgradeCharacter)
         {
-
+            AmountUpgradeCharacter++;
         }
     }
 }
