@@ -209,7 +209,7 @@ public class GameModel
     {
         if (currentMoney.GetValue() >= waterPrice.GetValue())
         {
-            AmountWater.Set(AmountWater.GetValue() + 1);
+            //AmountWater.Set(AmountWater.GetValue() + 1);
             currentMoney.Set(currentMoney.GetValue() - waterPrice.GetValue());
             waterPrice.Add(PERCENT_UPGRADE_WATER * waterPrice.GetValue());
             hitPowerWater += 1;
