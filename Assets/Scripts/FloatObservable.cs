@@ -23,6 +23,18 @@ public class FloatObservable : IObservable<float>
         }
     }
 
+    public void Set(float newValue)
+    {
+        //On change la valeur
+        _value = newValue;
+
+        //On notifie les observeurs
+        foreach (IObserver<float> obs in _observers)
+        {
+            obs.OnNext(_value);
+        }
+    }
+
     public IDisposable Subscribe(IObserver<float> observer)
     {
         if (!_observers.Contains(observer))

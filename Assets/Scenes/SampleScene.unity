@@ -754,6 +754,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &417177909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 417177910}
+  m_Layer: 5
+  m_Name: Magasins
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &417177910
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417177909}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2058072409}
+  - {fileID: 569933411}
+  m_Father: {fileID: 981950478}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &448574503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1108,12 +1145,16 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 981950478}
+    m_TransformParent: {fileID: 417177910}
     m_Modifications:
     - target: {fileID: 8854371085671900712, guid: 172b23aed65917447b08c675d6147222, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 8af4a1e4f5d41ee4ab6cba66df76c1d4, type: 3}
+    - target: {fileID: 8854371085671900713, guid: 172b23aed65917447b08c675d6147222, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8854371085671900713, guid: 172b23aed65917447b08c675d6147222, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1132,7 +1173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8854371085671900714, guid: 172b23aed65917447b08c675d6147222, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8854371085671900714, guid: 172b23aed65917447b08c675d6147222, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1220,7 +1261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8854371085671900715, guid: 172b23aed65917447b08c675d6147222, type: 3}
       propertyPath: m_Name
-      value: ITEM
+      value: CanShop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 172b23aed65917447b08c675d6147222, type: 3}
@@ -1352,6 +1393,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639806772}
   m_CullTransparentMesh: 1
+--- !u!1 &733150020 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4380691092948612173, guid: 777393c2e7cc51642a3e999fc222ca2d, type: 3}
+  m_PrefabInstance: {fileID: 3102952626744316089}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &932145492 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 241635350542562160, guid: 64f29213c9237174da85e0b76c72c554, type: 3}
@@ -1467,10 +1513,9 @@ RectTransform:
   - {fileID: 1685098600}
   - {fileID: 1335128291}
   - {fileID: 1823935359}
-  - {fileID: 2058072409}
-  - {fileID: 569933411}
-  - {fileID: 3102952626744316090}
   - {fileID: 2016125509}
+  - {fileID: 417177910}
+  - {fileID: 3102952626744316090}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2037,6 +2082,17 @@ RectTransform:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1610297102883438200, guid: 20cd9ca58ac405a408f43484b7121e8f, type: 3}
   m_PrefabInstance: {fileID: 1200931813}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1268669400 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8854371085671900713, guid: 172b23aed65917447b08c675d6147222, type: 3}
+  m_PrefabInstance: {fileID: 569933410}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -40023,6 +40079,11 @@ MonoBehaviour:
   _upgradeVenteX2Button: {fileID: 19019260}
   _upgradeBaratinageButton: {fileID: 1020541332}
   _upgradeCharactersButton: {fileID: 13490502}
+  _WaterShopButton: {fileID: 1697177150}
+  _CanShopButton: {fileID: 1268669400}
+  _BandageShopButton: {fileID: 0}
+  _GunShopButton: {fileID: 0}
+  _ShieldShopButton: {fileID: 0}
   _testMoneyAdd: {fileID: 1335128292}
   moneyView: {fileID: 2055960296}
   waterView: {fileID: 932145495}
@@ -40035,7 +40096,7 @@ MonoBehaviour:
   venteX2View: {fileID: 464003449}
   baratinageView: {fileID: 1884869886}
   upgradeCharacterView: {fileID: 198529409}
-  CharacterPrefab: {fileID: 0}
+  CharacterPrefab: {fileID: 733150020}
   ennemyWave: 0
   spawnTime: 0
   isInGame: 1
@@ -40297,6 +40358,17 @@ Transform:
   m_Father: {fileID: 981950478}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1697177150 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8854371085671900713, guid: 172b23aed65917447b08c675d6147222, type: 3}
+  m_PrefabInstance: {fileID: 8854371087641548659}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1729855151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41187,7 +41259,7 @@ RectTransform:
   - {fileID: 1286576135}
   - {fileID: 1745314936}
   m_Father: {fileID: 981950478}
-  m_RootOrder: 11
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -41613,8 +41685,12 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 981950478}
+    m_TransformParent: {fileID: 417177910}
     m_Modifications:
+    - target: {fileID: 8854371085671900713, guid: 172b23aed65917447b08c675d6147222, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8854371085671900713, guid: 172b23aed65917447b08c675d6147222, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -41629,7 +41705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8854371085671900714, guid: 172b23aed65917447b08c675d6147222, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8854371085671900714, guid: 172b23aed65917447b08c675d6147222, type: 3}
       propertyPath: m_AnchorMax.x
@@ -41673,15 +41749,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8854371085671900714, guid: 172b23aed65917447b08c675d6147222, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8854371085671900714, guid: 172b23aed65917447b08c675d6147222, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8854371085671900714, guid: 172b23aed65917447b08c675d6147222, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8854371085671900714, guid: 172b23aed65917447b08c675d6147222, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -41705,7 +41781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8854371085671900715, guid: 172b23aed65917447b08c675d6147222, type: 3}
       propertyPath: m_Name
-      value: Button
+      value: WaterShop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 172b23aed65917447b08c675d6147222, type: 3}

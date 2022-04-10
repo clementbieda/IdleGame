@@ -21,9 +21,18 @@ public class GameModel
     const float PERCENT_UPGRADE_BARATINAGE = 0.51f;
     const float PERCENT_UPGRADE_CHARACTERS = 0.6f;
 
-    //Magasins
+
+
     public FloatObservable currentMoney;
-    public float hitPower;
+
+    //Le nombre d'argent que l'on gagne par clic
+    public float hitPowerWater;
+    public float hitPowerCan;
+    public float hitPowerBandage;
+    public float hitPowerGun;
+    public float hitPowerShield;
+
+
     public float moneyIncreasePerSecond;
     public float x;
 
@@ -123,10 +132,20 @@ public class GameModel
         rnd = new System.Random();
 
         currentMoney = new FloatObservable(0);
-        hitPower = 1;
+
+
+        hitPowerWater = 1;
+        hitPowerCan = 5;
+        hitPowerBandage = 20;
+        hitPowerGun = 100;
+        hitPowerShield = 500;
+
+
         moneyIncreasePerSecond = 1;
         x = 0f;
         thresholdWinX2 = 0.2f;
+
+
         waterPrice = new FloatObservable(25);
         canPrice = new FloatObservable(50);
         bandagePrice = new FloatObservable(250);
@@ -153,6 +172,8 @@ public class GameModel
         {
             AmountWater++;
             waterPrice.Add(PERCENT_UPGRADE_WATER * waterPrice.GetValue());
+            hitPowerWater += 1;
+            currentMoney.Set(currentMoney.GetValue() - shopPrizeWater);
         }
     }
 
@@ -162,6 +183,8 @@ public class GameModel
         {
             AmountCan++;
             canPrice.Add(PERCENT_UPGRADE_CAN * canPrice.GetValue());
+            hitPowerCan += 5;
+            currentMoney.Set(currentMoney.GetValue() - shopPrizeCan);
         }
     }
 
@@ -171,6 +194,8 @@ public class GameModel
         {
             AmountBandage++;
             bandagePrice.Add(PERCENT_UPGRADE_BANDAGE * bandagePrice.GetValue());
+            hitPowerBandage += 20;
+            currentMoney.Set(currentMoney.GetValue() - shopPrizeBandage);
         }
     }
 
@@ -180,6 +205,8 @@ public class GameModel
         {
             AmountGun++;
             gunPrice.Add(PERCENT_UPGRADE_GUN * gunPrice.GetValue());
+            hitPowerGun += 100;
+            currentMoney.Set(currentMoney.GetValue() - shopPrizeGun);
         }
     }
 
@@ -189,14 +216,32 @@ public class GameModel
         {
             AmountShield++;
             shieldPrice.Add(PERCENT_UPGRADE_SHIELD * shieldPrice.GetValue());
+            hitPowerShield += 500;
+            currentMoney.Set(currentMoney.GetValue() - shopPrizeShield);
         }
     }
 
     // Click sur le bouton
 
-    public void Hit()
+    public void HitWater()
     {
-        currentMoney.Add(hitPower);
+        currentMoney.Add(hitPowerWater);
+    }
+    public void HitCan()
+    {
+        currentMoney.Add(hitPowerCan);
+    }
+    public void HitBandage()
+    {
+        currentMoney.Add(hitPowerBandage);
+    }
+    public void HitGun()
+    {
+        currentMoney.Add(hitPowerGun);
+    }
+    public void HitShield()
+    {
+        currentMoney.Add(hitPowerShield);
     }
 
     //Améliorations sur les magasins

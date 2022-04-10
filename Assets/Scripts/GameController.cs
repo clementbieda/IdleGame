@@ -24,9 +24,16 @@ public class GameController : MonoBehaviour
     [SerializeField] private Button _upgradeBaratinageButton;
     [SerializeField] private Button _upgradeCharactersButton;
 
+    //Boutons représentant les magasins
+    [SerializeField] private Button _WaterShopButton;
+    [SerializeField] private Button _CanShopButton;
+    [SerializeField] private Button _BandageShopButton;
+    [SerializeField] private Button _GunShopButton;
+    [SerializeField] private Button _ShieldShopButton;
+
     [SerializeField] private Button _testMoneyAdd;
 
-    //Magasins
+    //Money
     public FloatView moneyView;
 
 
@@ -68,6 +75,8 @@ public class GameController : MonoBehaviour
         _gameModel.GetGun().Subscribe(gunView);
         _gameModel.GetShield().Subscribe(shieldView);
 
+        
+
         //Rattachement au clic
         _upgradeWaterButton.onClick.AddListener(UpgradeWater);
         _upgradeCanButton.onClick.AddListener(UpgradeCan);
@@ -83,14 +92,19 @@ public class GameController : MonoBehaviour
         _gameModel.GetUpgradeCharacter().Subscribe(upgradeCharacterView);
 
 
-        _upgradeTempManagerButton.onClick.AddListener(UpgradeWater);
-        _upgradeFrequenceButton.onClick.AddListener(UpgradeCan);
-        _upgradeVenteX2Button.onClick.AddListener(UpgradeBandage);
-        _upgradeBaratinageButton.onClick.AddListener(UpgradeGun);
-        _upgradeCharactersButton.onClick.AddListener(UpgradeShield);
+        _upgradeTempManagerButton.onClick.AddListener(UpgradeTempManager);
+        _upgradeFrequenceButton.onClick.AddListener(UpgradeFrequence);
+        _upgradeVenteX2Button.onClick.AddListener(UpgradeVenteX2);
+        _upgradeBaratinageButton.onClick.AddListener(UpgradeBaratinage);
+        _upgradeCharactersButton.onClick.AddListener(UpgradeCharacter);
 
 
-        _testMoneyAdd.onClick.AddListener(TestAddMoney);
+        _WaterShopButton.onClick.AddListener(ClicOnWaterShop);
+        _CanShopButton.onClick.AddListener(ClicOnCanShop);
+        _BandageShopButton.onClick.AddListener(ClicOnBandageShop);
+        _GunShopButton.onClick.AddListener(ClicOnGunShop);
+        _ShieldShopButton.onClick.AddListener(ClicOnShieldShop);
+
 
         //On appelle la fonction qui génère les vagues dans le start
         StartCoroutine(WaveGenerate());
@@ -114,10 +128,12 @@ public class GameController : MonoBehaviour
         }
     }
 
+    /*
     private void TestAddMoney()
     {
         _gameModel.Hit();
     }
+    */
 
     private void UpgradeWater()
     {
@@ -150,9 +166,25 @@ public class GameController : MonoBehaviour
        
     }
 
-    public void ClicOnButton()
+    public void ClicOnWaterShop()
     {
-        _gameModel.Hit();
+        _gameModel.HitWater();
+    }
+    public void ClicOnCanShop()
+    {
+        _gameModel.HitCan();
+    }
+    public void ClicOnBandageShop()
+    {
+        _gameModel.HitBandage();
+    }
+    public void ClicOnGunShop()
+    {
+        _gameModel.HitGun();
+    }
+    public void ClicOnShieldShop()
+    {
+        _gameModel.HitShield();
     }
 
     private void UpgradeTempManager()
