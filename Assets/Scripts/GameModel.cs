@@ -42,7 +42,12 @@ public class GameModel
     public int AmountBandage;
     public int AmountGun;
     public int AmountShield;
-    public int profit1;
+
+    public int AmountTempManager;
+    public int AmountVenteX2;
+    public int AmountFrequence;
+    public int AmountBaratinage;
+    public int AmountUpgradeCharacter;
 
     //Upgrades magasins
     private FloatObservable tempManagerPrice;
@@ -188,7 +193,7 @@ public class GameModel
     {
         if (currentMoney.GetValue() >= shopPrizeTempManager)
         {
-
+            AmountTempManager++;
         }
     }
 
@@ -196,7 +201,7 @@ public class GameModel
     {
         if (currentMoney.GetValue() >= shopPrizeFrequence)
         {
-
+            AmountFrequence++;
         }
     }
 
@@ -204,13 +209,13 @@ public class GameModel
     {
         if (currentMoney.GetValue() >= shopPrizeBaratinage)
         {
-
+            AmountBaratinage++;
         }
     }
 
 
     public bool CheckX2Win()
-    {
+    { 
         return rnd.Next() < thresholdWinX2;
     }
 
