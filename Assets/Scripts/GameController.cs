@@ -31,8 +31,6 @@ public class GameController : MonoBehaviour
     [SerializeField] private Button _GunShopButton;
     [SerializeField] private Button _ShieldShopButton;
 
-    [SerializeField] private Button _testMoneyAdd;
-
     //Money
     public FloatView moneyView;
 
@@ -49,6 +47,12 @@ public class GameController : MonoBehaviour
     public FloatView venteX2View;
     public FloatView baratinageView;
     public FloatView upgradeCharacterView;
+
+    public FloatView waterAmountView;
+    public FloatView canAmountView;
+    public FloatView bandageAmountView;
+    public FloatView gunAmountView;
+    public FloatView shieldAmountView;
 
 
 
@@ -75,7 +79,14 @@ public class GameController : MonoBehaviour
         _gameModel.GetGun().Subscribe(gunView);
         _gameModel.GetShield().Subscribe(shieldView);
 
-        
+
+        _gameModel.GetAmountWater().Subscribe(waterAmountView);
+        _gameModel.GetAmountCan().Subscribe(canAmountView);
+        _gameModel.GetAmountBandages().Subscribe(bandageAmountView);
+        _gameModel.GetAmountGun().Subscribe(gunAmountView);
+        _gameModel.GetAmountShield().Subscribe(shieldAmountView);
+
+
 
         //Rattachement au clic
         _upgradeWaterButton.onClick.AddListener(UpgradeWater);
@@ -127,13 +138,6 @@ public class GameController : MonoBehaviour
             yield return new WaitForSeconds(waveTime);
         }
     }
-
-    /*
-    private void TestAddMoney()
-    {
-        _gameModel.Hit();
-    }
-    */
 
     private void UpgradeWater()
     {

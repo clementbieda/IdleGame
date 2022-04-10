@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FloatView : MonoBehaviour, IObserver<float>
 {
 
-    [SerializeField] private Text _value;
+    [SerializeField] private TextMeshProUGUI _value;
 
     public void OnCompleted()
     {

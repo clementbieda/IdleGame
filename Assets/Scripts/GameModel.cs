@@ -209,11 +209,11 @@ public class GameModel
     {
         if (currentMoney.GetValue() >= waterPrice.GetValue())
         {
-            //AmountWater.Set(AmountWater.GetValue() + 1);
+            
             currentMoney.Set(currentMoney.GetValue() - waterPrice.GetValue());
             waterPrice.Add(PERCENT_UPGRADE_WATER * waterPrice.GetValue());
             hitPowerWater += 1;
-            
+            AmountWater.Set(AmountWater.GetValue() + 1);
         }
     }
 
@@ -221,11 +221,11 @@ public class GameModel
     {
         if (currentMoney.GetValue() >= canPrice.GetValue())
         {
-            AmountCan.Set(AmountCan.GetValue() + 1);
+            
             currentMoney.Set(currentMoney.GetValue() - canPrice.GetValue());
             canPrice.Add(PERCENT_UPGRADE_CAN * canPrice.GetValue());
             hitPowerCan += 5;
-            
+            AmountCan.Set(AmountCan.GetValue() + 1);
         }
     }
 
@@ -233,11 +233,11 @@ public class GameModel
     {
         if (currentMoney.GetValue() >= bandagePrice.GetValue())
         {
-            AmountBandage.Set(AmountBandage.GetValue() + 1) ;
+            
             currentMoney.Set(currentMoney.GetValue() - bandagePrice.GetValue());
             bandagePrice.Add(PERCENT_UPGRADE_BANDAGE * bandagePrice.GetValue());
             hitPowerBandage += 20;
-            
+            AmountBandage.Set(AmountBandage.GetValue() + 1);
         }
     }
 
@@ -245,11 +245,11 @@ public class GameModel
     {
         if (currentMoney.GetValue() >= gunPrice.GetValue())
         {
-            AmountGun.Set(AmountGun.GetValue() + 1);
+            
             currentMoney.Set(currentMoney.GetValue() - gunPrice.GetValue());
             gunPrice.Add(PERCENT_UPGRADE_GUN * gunPrice.GetValue());
             hitPowerGun += 100;
-            
+            AmountGun.Set(AmountGun.GetValue() + 1);
         }
     }
 
@@ -257,11 +257,11 @@ public class GameModel
     {
         if (currentMoney.GetValue() >= shieldPrice.GetValue())
         {
-            AmountShield.Set(AmountShield.GetValue() + 1);
+            
             currentMoney.Set(currentMoney.GetValue() - shieldPrice.GetValue());
             shieldPrice.Add(PERCENT_UPGRADE_SHIELD * shieldPrice.GetValue());
             hitPowerShield += 500;
-            
+            AmountShield.Set(AmountShield.GetValue() + 1);
         }
     }
 
