@@ -52,11 +52,11 @@ public class GameModel
 
 
     //Amount
-    public int AmountWater;
-    public int AmountCan;
-    public int AmountBandage;
-    public int AmountGun;
-    public int AmountShield;
+    public FloatObservable AmountWater;
+    public FloatObservable AmountCan;
+    public FloatObservable AmountBandage;
+    public FloatObservable AmountGun;
+    public FloatObservable AmountShield;
 
     public int AmountTempManager;
     public int AmountVenteX2;
@@ -76,6 +76,10 @@ public class GameModel
     public int shopPrizeFrequence;
     public int shopPrizeBaratinage;
     public int shopPrizeUpgradeCharacter;
+
+
+
+    //Getters sur les prix des améliorations des magasins
 
     internal FloatObservable GetTempManager()
     {
@@ -102,6 +106,9 @@ public class GameModel
         return upgradeCharactersPrice;
     }
 
+
+    //Getters sur les prix des items
+
     internal FloatObservable GetWater()
     {
         return waterPrice;
@@ -126,6 +133,38 @@ public class GameModel
     {
         return shieldPrice;
     }
+
+
+    //Getters sur les conteurs de level
+
+    internal FloatObservable GetAmountWater()
+    {
+        return AmountWater;
+    }
+
+    internal FloatObservable GetAmountCan()
+    {
+        return AmountCan;
+    }
+
+    internal FloatObservable GetAmountBandages()
+    {
+        return AmountBandage;
+    }
+
+    internal FloatObservable GetAmountGun()
+    {
+        return AmountGun;
+    }
+
+    internal FloatObservable GetAmountShield()
+    {
+        return AmountShield;
+    }
+
+
+
+
 
     public GameModel()
     {
@@ -166,58 +205,63 @@ public class GameModel
 
     //Améliorations sur les items
 
-    internal void UpgradeWater()
+    public void UpgradeWater()
     {
-        if (currentMoney.GetValue() >= shopPrizeWater)
+        if (currentMoney.GetValue() >= waterPrice.GetValue())
         {
-            AmountWater++;
+            AmountWater.Set(AmountWater.GetValue() + 1);
+            currentMoney.Set(currentMoney.GetValue() - waterPrice.GetValue());
             waterPrice.Add(PERCENT_UPGRADE_WATER * waterPrice.GetValue());
             hitPowerWater += 1;
-            currentMoney.Set(currentMoney.GetValue() - shopPrizeWater);
+            
         }
     }
 
     internal void UpgradeCan()
     {
-        if (currentMoney.GetValue() >= shopPrizeCan)
+        if (currentMoney.GetValue() >= canPrice.GetValue())
         {
-            AmountCan++;
+            AmountCan.Set(AmountCan.GetValue() + 1);
+            currentMoney.Set(currentMoney.GetValue() - canPrice.GetValue());
             canPrice.Add(PERCENT_UPGRADE_CAN * canPrice.GetValue());
             hitPowerCan += 5;
-            currentMoney.Set(currentMoney.GetValue() - shopPrizeCan);
+            
         }
     }
 
     internal void UpgradeBandage()
     {
-        if (currentMoney.GetValue() >= shopPrizeBandage)
+        if (currentMoney.GetValue() >= bandagePrice.GetValue())
         {
-            AmountBandage++;
+            AmountBandage.Set(AmountBandage.GetValue() + 1) ;
+            currentMoney.Set(currentMoney.GetValue() - bandagePrice.GetValue());
             bandagePrice.Add(PERCENT_UPGRADE_BANDAGE * bandagePrice.GetValue());
             hitPowerBandage += 20;
-            currentMoney.Set(currentMoney.GetValue() - shopPrizeBandage);
+            
         }
     }
 
     internal void UpgradeGun()
     {
-        if (currentMoney.GetValue() >= shopPrizeGun)
+        if (currentMoney.GetValue() >= gunPrice.GetValue())
         {
-            AmountGun++;
+            AmountGun.Set(AmountGun.GetValue() + 1);
+            currentMoney.Set(currentMoney.GetValue() - gunPrice.GetValue());
             gunPrice.Add(PERCENT_UPGRADE_GUN * gunPrice.GetValue());
             hitPowerGun += 100;
-            currentMoney.Set(currentMoney.GetValue() - shopPrizeGun);
+            
         }
     }
 
     internal void UpgradeShield()
     {
-        if (currentMoney.GetValue() >= shopPrizeShield)
+        if (currentMoney.GetValue() >= shieldPrice.GetValue())
         {
-            AmountShield++;
+            AmountShield.Set(AmountShield.GetValue() + 1);
+            currentMoney.Set(currentMoney.GetValue() - shieldPrice.GetValue());
             shieldPrice.Add(PERCENT_UPGRADE_SHIELD * shieldPrice.GetValue());
             hitPowerShield += 500;
-            currentMoney.Set(currentMoney.GetValue() - shopPrizeShield);
+            
         }
     }
 
@@ -248,28 +292,34 @@ public class GameModel
 
     public void DelayManager()
     {
-        if (currentMoney.GetValue() >= shopPrizeTempManager)
+        if (currentMoney.GetValue() >= tempManagerPrice.GetValue())
         {
             AmountTempManager++;
+            currentMoney.Set(currentMoney.GetValue() - tempManagerPrice.GetValue());
             tempManagerPrice.Add(PERCENT_UPGRADE_TEMP_MANAGER * tempManagerPrice.GetValue());
+            
         }
     }
 
     public void FrequenceClients()
     {
-        if (currentMoney.GetValue() >= shopPrizeFrequence)
+        if (currentMoney.GetValue() >= frequencePrice.GetValue())
         {
             AmountFrequence++;
+            currentMoney.Set(currentMoney.GetValue() - frequencePrice.GetValue());
             frequencePrice.Add(PERCENT_UPGRADE_FREQUENCE * frequencePrice.GetValue());
+            
         }
     }
 
     public void Baratinage()
     {
-        if (currentMoney.GetValue() >= shopPrizeBaratinage)
+        if (currentMoney.GetValue() >= baratinagePrice.GetValue())
         {
             AmountBaratinage++;
+            currentMoney.Set(currentMoney.GetValue() - baratinagePrice.GetValue());
             baratinagePrice.Add(PERCENT_UPGRADE_BARATINAGE * baratinagePrice.GetValue());
+            
         }
     }
 
@@ -281,19 +331,23 @@ public class GameModel
 
     public void UpgradeCharacters()
     {
-        if (currentMoney.GetValue() >= shopPrizeUpgradeCharacter)
+        if (currentMoney.GetValue() >= upgradeCharactersPrice.GetValue())
         {
             AmountUpgradeCharacter++;
+            currentMoney.Set(currentMoney.GetValue() - upgradeCharactersPrice.GetValue());
             upgradeCharactersPrice.Add(PERCENT_UPGRADE_CHARACTERS * upgradeCharactersPrice.GetValue());
+            
         }
     }
 
     public void VenteX2()
     {
-        if (currentMoney.GetValue() >= shopPrizeVenteX2)
+        if (currentMoney.GetValue() >= venteX2Price.GetValue())
         {
             AmountVenteX2++;
+            currentMoney.Set(currentMoney.GetValue() - venteX2Price.GetValue());
             venteX2Price.Add(PERCENT_UPGRADE_VENTEX2 * venteX2Price.GetValue());
+            
         }
     }
 }
