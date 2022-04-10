@@ -15,11 +15,11 @@ public class GameModel
     const float PERCENT_UPGRADE_GUN = 0.41f;
     const float PERCENT_UPGRADE_SHIELD = 0.5f;
 
-    const float PERCENT_UPGRADE_TEMP_MANAGER = 0.15f;
-    const float PERCENT_UPGRADE_VENTEX2 = 0.24f;
-    const float PERCENT_UPGRADE_FREQUENCE = 0.3f;
-    const float PERCENT_UPGRADE_BARATINAGE = 0.41f;
-    const float PERCENT_UPGRADE_CHARACTERS = 0.5f;
+    const float PERCENT_UPGRADE_TEMP_MANAGER = 0.20f;
+    const float PERCENT_UPGRADE_VENTEX2 = 0.34f;
+    const float PERCENT_UPGRADE_FREQUENCE = 0.4f;
+    const float PERCENT_UPGRADE_BARATINAGE = 0.51f;
+    const float PERCENT_UPGRADE_CHARACTERS = 0.6f;
 
     //Magasins
     public FloatObservable currentMoney;
@@ -57,7 +57,7 @@ public class GameModel
 
     //Upgrades magasins
     private FloatObservable tempManagerPrice;
-    private FloatObservable VenteX2Price;
+    private FloatObservable venteX2Price;
     private FloatObservable frequencePrice;
     private FloatObservable baratinagePrice;
     private FloatObservable upgradeCharactersPrice;
@@ -75,7 +75,7 @@ public class GameModel
 
     internal FloatObservable GetVenteX2()
     {
-        return VenteX2Price;
+        return venteX2Price;
     }
 
     internal FloatObservable GetFrequence()
@@ -132,6 +132,12 @@ public class GameModel
         bandagePrice = new FloatObservable(250);
         gunPrice = new FloatObservable(3000);
         shieldPrice = new FloatObservable(12500);
+
+        tempManagerPrice = new FloatObservable(1000);
+        frequencePrice = new FloatObservable(5000);
+        venteX2Price = new FloatObservable(15500);
+        baratinagePrice = new FloatObservable(22000);
+        upgradeCharactersPrice = new FloatObservable(150000);
     }
 
     internal FloatObservable GetMoney()
@@ -200,7 +206,7 @@ public class GameModel
         if (currentMoney.GetValue() >= shopPrizeTempManager)
         {
             AmountTempManager++;
-            //tempManagerPrice.Add()
+            tempManagerPrice.Add(PERCENT_UPGRADE_TEMP_MANAGER * tempManagerPrice.GetValue());
         }
     }
 
@@ -209,6 +215,7 @@ public class GameModel
         if (currentMoney.GetValue() >= shopPrizeFrequence)
         {
             AmountFrequence++;
+            frequencePrice.Add(PERCENT_UPGRADE_FREQUENCE * frequencePrice.GetValue());
         }
     }
 
@@ -217,6 +224,7 @@ public class GameModel
         if (currentMoney.GetValue() >= shopPrizeBaratinage)
         {
             AmountBaratinage++;
+            baratinagePrice.Add(PERCENT_UPGRADE_BARATINAGE * baratinagePrice.GetValue());
         }
     }
 
@@ -231,6 +239,16 @@ public class GameModel
         if (currentMoney.GetValue() >= shopPrizeUpgradeCharacter)
         {
             AmountUpgradeCharacter++;
+            upgradeCharactersPrice.Add(PERCENT_UPGRADE_CHARACTERS * upgradeCharactersPrice.GetValue());
+        }
+    }
+
+    public void VenteX2()
+    {
+        if (currentMoney.GetValue() >= shopPrizeVenteX2)
+        {
+            AmountVenteX2++;
+            venteX2Price.Add(PERCENT_UPGRADE_VENTEX2 * venteX2Price.GetValue());
         }
     }
 }
