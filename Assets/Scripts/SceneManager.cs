@@ -19,6 +19,11 @@ public class SceneManager : MonoBehaviour
         Debug.Log("clique options détecté");
     }
 
+    public void Charger()
+    {
+        Debug.Log("clique load détecté");
+    }
+
     public void QuitGame ()
     {
         Application.Quit();
