@@ -86,11 +86,12 @@ public class GameController : MonoBehaviour
         _gameModel.GetShield().Subscribe(shieldView);
 
 
-        //_gameModel.GetAmountWater().Subscribe(waterAmountView);
-        //_gameModel.GetAmountCan().Subscribe(canAmountView);
-        //_gameModel.GetAmountBandages().Subscribe(bandageAmountView);
-        //_gameModel.GetAmountGun().Subscribe(gunAmountView);
-        //_gameModel.GetAmountShield().Subscribe(shieldAmountView);
+        //
+        _gameModel.GetAmountWater().Subscribe(waterAmountView);
+        _gameModel.GetAmountCan().Subscribe(canAmountView);
+        _gameModel.GetAmountBandages().Subscribe(bandageAmountView);
+        _gameModel.GetAmountGun().Subscribe(gunAmountView);
+        _gameModel.GetAmountShield().Subscribe(shieldAmountView);
 
 
 
@@ -118,9 +119,9 @@ public class GameController : MonoBehaviour
 
         _WaterShopButton.onClick.AddListener(ClicOnWaterShop);
         _CanShopButton.onClick.AddListener(ClicOnCanShop);
-        _BandageShopButton.onClick.AddListener(ClicOnBandageShop);
-        _GunShopButton.onClick.AddListener(ClicOnGunShop);
-        _ShieldShopButton.onClick.AddListener(ClicOnShieldShop);
+        //_BandageShopButton.onClick.AddListener(ClicOnBandageShop);
+        //_GunShopButton.onClick.AddListener(ClicOnGunShop);
+        //_ShieldShopButton.onClick.AddListener(ClicOnShieldShop);
 
 
         //On appelle la fonction qui génère les vagues dans le start
@@ -175,7 +176,7 @@ public class GameController : MonoBehaviour
     {
         ActiveTime += Time.deltaTime;
         var percent = ActiveTime / MaxTime;
-        _tempManager.fillAmount = Mathf.Lerp(0, 1, percent);
+        //_tempManager.fillAmount = Mathf.Lerp(0, 1, percent);
     }
 
     public void ClicOnWaterShop()

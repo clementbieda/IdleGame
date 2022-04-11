@@ -6,7 +6,7 @@ using UnityEngine;
 public class CharactersMovement : MonoBehaviour
 {
 
-    [SerializeField] Transform[] waypoints;
+    [SerializeField] List<Transform> waypoints;
 
     [SerializeField] float moveSpeed = 2f;
 
@@ -32,7 +32,7 @@ public class CharactersMovement : MonoBehaviour
             waypointIndex += 1;
         }
 
-        if (waypointIndex == waypoints.Length)
+        if (waypointIndex == waypoints. Count)
         {
             waypointIndex = 0;
         }

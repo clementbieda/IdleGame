@@ -198,6 +198,12 @@ public class GameModel
         venteX2Price = new FloatObservable(15500);
         baratinagePrice = new FloatObservable(22000);
         upgradeCharactersPrice = new FloatObservable(150000);
+
+        AmountWater = new FloatObservable(0);
+        AmountCan = new FloatObservable(0);
+        AmountBandage = new FloatObservable(0);
+        AmountGun = new FloatObservable(0);
+        AmountShield = new FloatObservable(0);
     }
 
     internal FloatObservable GetMoney()
