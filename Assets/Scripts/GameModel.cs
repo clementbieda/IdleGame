@@ -9,6 +9,8 @@ public class GameModel
 
     public float thresholdWinX2;
 
+    public float timeManager = 3f;
+
     const float PERCENT_UPGRADE_WATER = 0.15f;
     const float PERCENT_UPGRADE_CAN = 0.24f;
     const float PERCENT_UPGRADE_BANDAGE = 0.3f;

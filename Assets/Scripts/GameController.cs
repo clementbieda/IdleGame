@@ -27,9 +27,9 @@ public class GameController : MonoBehaviour
     //Boutons représentant les magasins
     [SerializeField] private Button _WaterShopButton;
     [SerializeField] private Button _CanShopButton;
-    //[SerializeField] private Button _BandageShopButton;
-    //[SerializeField] private Button _GunShopButton;
-    //[SerializeField] private Button _ShieldShopButton;
+    [SerializeField] private Button _BandageShopButton;
+    [SerializeField] private Button _GunShopButton;
+    [SerializeField] private Button _ShieldShopButton;
 
     //Money
     public FloatView moneyView;
@@ -53,6 +53,12 @@ public class GameController : MonoBehaviour
     public FloatView bandageAmountView;
     public FloatView gunAmountView;
     public FloatView shieldAmountView;
+
+
+    //Temporalité des managers
+    public float MaxTime = 3f;
+    public float ActiveTime = 0f;
+    public Image _tempManager;
 
 
 
@@ -80,11 +86,11 @@ public class GameController : MonoBehaviour
         _gameModel.GetShield().Subscribe(shieldView);
 
 
-        _gameModel.GetAmountWater().Subscribe(waterAmountView);
-        _gameModel.GetAmountCan().Subscribe(canAmountView);
-        _gameModel.GetAmountBandages().Subscribe(bandageAmountView);
-        _gameModel.GetAmountGun().Subscribe(gunAmountView);
-        _gameModel.GetAmountShield().Subscribe(shieldAmountView);
+        //_gameModel.GetAmountWater().Subscribe(waterAmountView);
+        //_gameModel.GetAmountCan().Subscribe(canAmountView);
+        //_gameModel.GetAmountBandages().Subscribe(bandageAmountView);
+        //_gameModel.GetAmountGun().Subscribe(gunAmountView);
+        //_gameModel.GetAmountShield().Subscribe(shieldAmountView);
 
 
 
@@ -112,9 +118,9 @@ public class GameController : MonoBehaviour
 
         _WaterShopButton.onClick.AddListener(ClicOnWaterShop);
         _CanShopButton.onClick.AddListener(ClicOnCanShop);
-        //_BandageShopButton.onClick.AddListener(ClicOnBandageShop);
-        //_GunShopButton.onClick.AddListener(ClicOnGunShop);
-        //_ShieldShopButton.onClick.AddListener(ClicOnShieldShop);
+        _BandageShopButton.onClick.AddListener(ClicOnBandageShop);
+        _GunShopButton.onClick.AddListener(ClicOnGunShop);
+        _ShieldShopButton.onClick.AddListener(ClicOnShieldShop);
 
 
         //On appelle la fonction qui génère les vagues dans le start
@@ -167,7 +173,9 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        ActiveTime += Time.deltaTime;
+        var percent = ActiveTime / MaxTime;
+        _tempManager.fillAmount = Mathf.Lerp(0, 1, percent);
     }
 
     public void ClicOnWaterShop()
