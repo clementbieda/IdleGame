@@ -9,7 +9,7 @@ public class SceneManager : MonoBehaviour
     // Start is called before the first frame update
     public void PlayGame ()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene 1");
         Debug.Log("clique play détecté");
     }
 
