@@ -27,9 +27,9 @@ public class GameController : MonoBehaviour
     //Boutons représentant les magasins
     [SerializeField] private Button _WaterShopButton;
     [SerializeField] private Button _CanShopButton;
-    [SerializeField] private Button _BandageShopButton;
-    [SerializeField] private Button _GunShopButton;
-    [SerializeField] private Button _ShieldShopButton;
+    //[SerializeField] private Button _BandageShopButton;
+    //[SerializeField] private Button _GunShopButton;
+    //[SerializeField] private Button _ShieldShopButton;
 
     //Money
     public FloatView moneyView;
@@ -112,9 +112,9 @@ public class GameController : MonoBehaviour
 
         _WaterShopButton.onClick.AddListener(ClicOnWaterShop);
         _CanShopButton.onClick.AddListener(ClicOnCanShop);
-        _BandageShopButton.onClick.AddListener(ClicOnBandageShop);
-        _GunShopButton.onClick.AddListener(ClicOnGunShop);
-        _ShieldShopButton.onClick.AddListener(ClicOnShieldShop);
+        //_BandageShopButton.onClick.AddListener(ClicOnBandageShop);
+        //_GunShopButton.onClick.AddListener(ClicOnGunShop);
+        //_ShieldShopButton.onClick.AddListener(ClicOnShieldShop);
 
 
         //On appelle la fonction qui génère les vagues dans le start
