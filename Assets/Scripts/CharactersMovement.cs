@@ -32,9 +32,6 @@ public class CharactersMovement : MonoBehaviour
             waypointIndex += 1;
         }
 
-        if (waypointIndex == waypoints. Count)
-        {
-            waypointIndex = 0;
-        }
+        
     }
 }
