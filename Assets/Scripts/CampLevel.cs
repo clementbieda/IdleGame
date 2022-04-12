@@ -15,6 +15,7 @@ public class CampLevel : MonoBehaviour
     [SerializeField]
     private string targetCategory = default;
 
+    private int etape = 1;
 
     private SpriteLibraryAsset LibraryAsset => spriteLibrary.spriteLibraryAsset;
 
@@ -23,7 +24,7 @@ public class CampLevel : MonoBehaviour
     {
     string[] labels =
       LibraryAsset.GetCategoryLabelNames(targetCategory).ToArray();
-    int index = Random.Range(0, labels.Length); // faire condition pour pas dépasser 5, et faire de 1 en 1 en changeant le random
+    int index = etape++; // faire condition pour pas dépasser 5, et faire de 1 en 1 en changeant le 
     string label = labels[index];
 
     targetResolver.SetCategoryAndLabel(targetCategory, label);
