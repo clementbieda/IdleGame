@@ -7,17 +7,21 @@ public class CampLevel : MonoBehaviour
     public SpriteRenderer spriteRenderer;
 
     public Sprite[] spriteArray;
+
     public int state;
+
 
     void Start()
     {
-        spriteArray = Resources.LoadAll<Sprite>("BirdHeroSprite");
+        spriteArray = Resources.LoadAll<Sprite>("Water Camp");
 
     }
 
     public void ChangeSprite() 
     { 
-        spriteRenderer.sprite = spriteArray[0]; 
+
+        spriteRenderer.sprite = spriteArray[state]; 
+        state++;
     }
 
 
