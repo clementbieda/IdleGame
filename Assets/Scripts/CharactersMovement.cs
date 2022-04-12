@@ -32,6 +32,10 @@ public class CharactersMovement : MonoBehaviour
             waypointIndex += 1;
         }
 
+        if (waypointIndex == waypoints.Count)
+        {
+            Destroy(gameObject);
+        }
         
     }
 }
