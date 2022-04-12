@@ -166,21 +166,19 @@ public class GameController : MonoBehaviour
         Debug.Log("Un client est entré dans le Water Shop");
     }
 
+    private void spawnClient()
+    {
+        GameObject a = Instantiate(CharacterPrefab) as GameObject;
+    }
+
     IEnumerator WaveGenerate()
     {
-        while (isInGame)
+        while (true)
         {
-            //On fait spawn un ennemi à chaque itération dans la boucle
-            for (int i = 0; i < ennemyWave; i++)
-            {
-                Vector3 spawnPos = new Vector3(5,2,0);
-                Instantiate(CharacterPrefab, spawnPos, Quaternion.identity);
-                yield return new WaitForSeconds(spawnTime);
-            }
-
-            //On laisse un temps entre chaque vague de spawn
-            yield return new WaitForSeconds(waveTime);
+            yield return new WaitForSeconds(spawnTime);
+            spawnClient();
         }
+        
     }
 
     private void UpgradeWater()
