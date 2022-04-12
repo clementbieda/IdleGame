@@ -1,28 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CampLevel : MonoBehaviour
 {
-    public SpriteRenderer spriteRenderer;
-
-    public Sprite[] spriteArray;
-
-    public int state;
-
+    public Button button1;
+    public Sprite sprite1, sprite2, sprite3, sprite4, sprite5;
 
     void Start()
     {
-        spriteArray = Resources.LoadAll<Sprite>("Water Camp");
+
+        ChangeSprite(sprite1);
 
     }
 
-    public void ChangeSprite() 
-    { 
+    public void ChangeSprite(Sprite sprite) 
+    {
+        button1.GetComponent<Image>().sprite = sprite;
 
-        spriteRenderer.sprite = spriteArray[state]; 
-        state++;
+        ChangeSprite(sprite);
     }
-
-
 }
