@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bf7c34a0dc4e6348bea04faa70406ee, type: 3}
-  m_Name: Camp Can
+  m_Name: CampCan
   m_EditorClassIdentifier: 
   m_Labels:
   - m_Name: Can
     m_Hash: 1534196786
     m_CategoryList:
-    - m_Name: Level1
-      m_Hash: 5521811
+    - m_Name: 1
+      m_Hash: -2082672713
       m_Sprite: {fileID: 21300000, guid: 81998bb0813b5324083ddd1c94cfe005, type: 3}
-    - m_Name: Level2
-      m_Hash: -1721954263
+    - m_Name: 2
+      m_Hash: 450215437
       m_Sprite: {fileID: 21300000, guid: cf277a5249bda724895c10e379d77c85, type: 3}
-    - m_Name: Level3
-      m_Hash: -296083265
+    - m_Name: 3
+      m_Hash: 1842515611
       m_Sprite: {fileID: 21300000, guid: 8ed90624de5408d44b6a769d95c1b1c3, type: 3}
-    - m_Name: Level4
-      m_Hash: 1883157788
+    - m_Name: 4
+      m_Hash: -206169288
       m_Sprite: {fileID: 21300000, guid: 157f417f64906274990ff15d5bafac59, type: 3}
-    - m_Name: Level5
-      m_Hash: 121210250
+    - m_Name: 5
+      m_Hash: -2068763730
       m_Sprite: {fileID: 21300000, guid: 83c578b641b2e404e9396519ff6feaa2, type: 3}

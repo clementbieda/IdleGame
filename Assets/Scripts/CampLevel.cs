@@ -1,22 +1,31 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Experimental.U2D.Animation;
+using UnityEngine.U2D;
+using System.Linq;
 
 public class CampLevel : MonoBehaviour
 {
-    public Button button1;
-    public Sprite sprite1, sprite2, sprite3, sprite4, sprite5;
+    [SerializeField]
+    private SpriteLibrary spriteLibrary = default;
 
-    void Start()
+    [SerializeField]
+    private SpriteResolver targetResolver = default;
+
+    [SerializeField]
+    private string targetCategory = default;
+
+
+    private SpriteLibraryAsset LibraryAsset => spriteLibrary.spriteLibraryAsset;
+
+
+    public void SelectRandom ()
     {
+    string[] labels =
+      LibraryAsset.GetCategoryLabelNames(targetCategory).ToArray();
+    int index = Random.Range(0, labels.Length); // faire condition pour pas dépasser 5, et faire de 1 en 1 en changeant le random
+    string label = labels[index];
 
-        ChangeSprite(sprite1);
-
-    }
-
-    public void ChangeSprite(Sprite sprite) 
-    {
-        button1.GetComponent<Image>().sprite = sprite;
-
-        ChangeSprite(sprite);
+    targetResolver.SetCategoryAndLabel(targetCategory, label);
     }
 }
