@@ -54,6 +54,12 @@ public class GameController : MonoBehaviour
     public FloatView gunAmountView;
     public FloatView shieldAmountView;
 
+    //TriggerShopView
+    public TriggerShop _waterTriggerShop;
+    public TriggerShop _canTriggerShop;
+    public TriggerShop _bandageTriggerShop;
+    public TriggerShop _gunTriggerShop;
+    public TriggerShop _shieldTriggerShop;
 
     //Temporalité des managers
     public float MaxTime = 3f;
@@ -123,10 +129,41 @@ public class GameController : MonoBehaviour
         //_GunShopButton.onClick.AddListener(ClicOnGunShop);
         //_ShieldShopButton.onClick.AddListener(ClicOnShieldShop);
 
+        _waterTriggerShop.AddListener(OnTriggerWaterShop);
+        _canTriggerShop.AddListener(OnTriggerCanShop);
+        _bandageTriggerShop.AddListener(OnTriggerBandageShop);
+        _gunTriggerShop.AddListener(OnTriggerGunShop);
+        _shieldTriggerShop.AddListener(OnTriggerShieldShop);
+
 
         //On appelle la fonction qui génère les vagues dans le start
         StartCoroutine(WaveGenerate());
 
+    }
+    
+    private void OnTriggerShieldShop()
+    {
+        Debug.Log("Un client est entré dans le Shield Shop");
+    }
+
+    private void OnTriggerGunShop()
+    {
+        Debug.Log("Un client est entré dans le Gun Shop");
+    }
+
+    private void OnTriggerBandageShop()
+    {
+        Debug.Log("Un client est entré dans le Bandage Shop");
+    }
+
+    private void OnTriggerCanShop()
+    {
+        Debug.Log("Un client est entré dans le Can Shop");
+    }
+    
+    private void OnTriggerWaterShop()
+    {
+        Debug.Log("Un client est entré dans le Water Shop");
     }
 
     IEnumerator WaveGenerate()
