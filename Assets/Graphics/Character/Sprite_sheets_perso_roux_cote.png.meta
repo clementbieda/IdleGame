@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: 3991b8b0579ab714698da32cde2b4069
+guid: d02bc492ccf40a740bae628f1ebccd6f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2156795929047683416
-    second: Sprite_sheets_perso_militaire_0
+      213: 1085647042852753179
+    second: Sprite_sheets_perso_roux_cote_0
   - first:
-      213: 40216513901980478
-    second: Sprite_sheets_perso_militaire_1
+      213: -5821959535731047154
+    second: Sprite_sheets_perso_roux_cote_1
   - first:
-      213: -1484316697320387123
-    second: Sprite_sheets_perso_militaire_2
+      213: -8932163601194338363
+    second: Sprite_sheets_perso_roux_cote_2
   - first:
-      213: 7626107233495478865
-    second: Sprite_sheets_perso_militaire_3
+      213: 6826566093967042959
+    second: Sprite_sheets_perso_roux_cote_3
   - first:
-      213: -8217099895199060801
-    second: Sprite_sheets_perso_militaire_4
+      213: -4999348108808369687
+    second: Sprite_sheets_perso_roux_cote_4
   - first:
-      213: -7782095951861313699
-    second: Sprite_sheets_perso_militaire_5
+      213: -235227904408589612
+    second: Sprite_sheets_perso_roux_cote_5
   - first:
-      213: 8321086190468437956
-    second: Sprite_sheets_perso_militaire_6
+      213: 2949855139265176014
+    second: Sprite_sheets_perso_roux_cote_6
   - first:
-      213: -7986193467423944943
-    second: Sprite_sheets_perso_militaire_7
+      213: 7912875619048771221
+    second: Sprite_sheets_perso_roux_cote_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -70,7 +70,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite_sheets_perso_militaire_0
+      name: Sprite_sheets_perso_roux_cote_0
       rect:
         serializedVersion: 2
         x: 0
@@ -129,14 +129,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85155e3687a7eed10800000000000000
-      internalID: 2156795929047683416
+      spriteID: b1f01b4cb3ef01f00800000000000000
+      internalID: 1085647042852753179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_sheets_perso_militaire_1
+      name: Sprite_sheets_perso_roux_cote_1
       rect:
         serializedVersion: 2
         x: 32
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3b6b31d4b0ee8000800000000000000
-      internalID: 40216513901980478
+      spriteID: e058d08f5ae343fa0800000000000000
+      internalID: -5821959535731047154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_sheets_perso_militaire_2
+      name: Sprite_sheets_perso_roux_cote_2
       rect:
         serializedVersion: 2
         x: 64
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcd890af3d5a66be0800000000000000
-      internalID: -1484316697320387123
+      spriteID: 5c7332387849a0480800000000000000
+      internalID: -8932163601194338363
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_sheets_perso_militaire_3
+      name: Sprite_sheets_perso_roux_cote_3
       rect:
         serializedVersion: 2
         x: 96
@@ -192,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 152f88fbf1065d960800000000000000
-      internalID: 7626107233495478865
+      spriteID: f89a1aa91b5dcbe50800000000000000
+      internalID: 6826566093967042959
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_sheets_perso_militaire_4
+      name: Sprite_sheets_perso_roux_cote_4
       rect:
         serializedVersion: 2
         x: 0
@@ -213,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbca2ce6e2ff6fd80800000000000000
-      internalID: -8217099895199060801
+      spriteID: 9e9c4f9f16fbe9ab0800000000000000
+      internalID: -4999348108808369687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_sheets_perso_militaire_5
+      name: Sprite_sheets_perso_roux_cote_5
       rect:
         serializedVersion: 2
         x: 32
@@ -234,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5f0d4d86f0700490800000000000000
-      internalID: -7782095951861313699
+      spriteID: 4da677c977d4cbcf0800000000000000
+      internalID: -235227904408589612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_sheets_perso_militaire_6
+      name: Sprite_sheets_perso_roux_cote_6
       rect:
         serializedVersion: 2
         x: 64
@@ -255,14 +255,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c79740adcf6a7370800000000000000
-      internalID: 8321086190468437956
+      spriteID: ec1e2c2ce9dffe820800000000000000
+      internalID: 2949855139265176014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_sheets_perso_militaire_7
+      name: Sprite_sheets_perso_roux_cote_7
       rect:
         serializedVersion: 2
         x: 96
@@ -276,8 +276,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11f86a2aa575b2190800000000000000
-      internalID: -7986193467423944943
+      spriteID: 59e4049837e20dd60800000000000000
+      internalID: 7912875619048771221
       vertices: []
       indices: 
       edges: []
