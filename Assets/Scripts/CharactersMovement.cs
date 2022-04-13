@@ -7,21 +7,25 @@ public class CharactersMovement : MonoBehaviour
 {
     private List<List<Transform>> waypoints;
 
-    [SerializeField] List<Transform> waypointsWater;
-    [SerializeField] List<Transform> waypointsCan;
-    [SerializeField] List<Transform> waypointsBandage;
-    [SerializeField] List<Transform> waypointsGun;
-    [SerializeField] List<Transform> waypointsShield;
+    
 
 
 
     public int current;
 
-    [SerializeField] float moveSpeed = 2f;
+    [SerializeField] float moveSpeed;
 
     int waypointIndex = 0;
     // Start is called before the first frame update
     void Start()
+    {
+
+
+        
+        
+    }
+
+    public void Init(List<Transform> waypointsWater, List<Transform> waypointsCan, List<Transform> waypointsBandage, List<Transform> waypointsGun, List<Transform> waypointsShield)
     {
         waypoints = new List<List<Transform>>();
         waypoints.Add(waypointsWater);
@@ -29,6 +33,7 @@ public class CharactersMovement : MonoBehaviour
         waypoints.Add(waypointsBandage);
         waypoints.Add(waypointsGun);
         waypoints.Add(waypointsShield);
+
 
         current = Random.Range(0, 5);
         transform.position = waypoints[current][waypointIndex].transform.position;

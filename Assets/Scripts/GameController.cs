@@ -31,6 +31,13 @@ public class GameController : MonoBehaviour
     [SerializeField] private Button _GunShopButton;
     [SerializeField] private Button _ShieldShopButton;
 
+    //waypoints
+    [SerializeField] List<Transform> _waypointsWater;
+    [SerializeField] List<Transform> _waypointsCan;
+    [SerializeField] List<Transform> _waypointsBandage;
+    [SerializeField] List<Transform> _waypointsGun;
+    [SerializeField] List<Transform> _waypointsShield;
+
     //Money
     public FloatView moneyView;
 
@@ -71,7 +78,7 @@ public class GameController : MonoBehaviour
     //Spawn Characters
     public GameObject CharacterPrefab;
     public int ennemyWave;
-    public float spawnTime = 10f;
+    [SerializeField] private float spawnTime;
     public bool isInGame = true;
 
     public float waveTime;
@@ -165,10 +172,11 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("Un client est entré dans le Water Shop");
     }
-
+    
     private void spawnClient()
     {
-        GameObject a = Instantiate(CharacterPrefab) as GameObject;
+        GameObject client = GameObject.Instantiate(CharacterPrefab);
+        client.GetComponent<CharactersMovement>().Init(_waypointsWater, _waypointsCan, _waypointsBandage, _waypointsGun, _waypointsShield);
         //Instantiate(CharacterPrefab, new Vector3(-15, -7, 0), Quaternion.identity);
     }
 
@@ -181,7 +189,7 @@ public class GameController : MonoBehaviour
         }
         
     }
-
+    
     private void UpgradeWater()
     {
         _gameModel.UpgradeWater();
@@ -210,9 +218,11 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ActiveTime += Time.deltaTime;
-        var percent = ActiveTime / MaxTime;
-        //_tempManager.fillAmount = Mathf.Lerp(0, 1, percent);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TimeBarShop.instance.UseTimeBar(100);
+        }
     }
 
     public void ClicOnWaterShop()
