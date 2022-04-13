@@ -13,7 +13,7 @@ public class LevelMax : MonoBehaviour
     {
         level++;
         
-        if (level == 6)
+        if (level == 5)
         {
             yourbutton.interactable = false;
         }
