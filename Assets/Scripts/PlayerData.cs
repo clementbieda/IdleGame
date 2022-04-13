@@ -4,14 +4,14 @@ using UnityEngine;
 
 
  [System.Serializable]
-public class Data 
+public class PlayerData 
 {
     
     public FloatObservable currentMoney;
 
 
-    public Data (GameModel gamemodel)
+    public PlayerData (Player player)
     {
-        currentMoney = gamemodel.currentMoney;
+        currentMoney = player.currentMoney;
     }
 }
