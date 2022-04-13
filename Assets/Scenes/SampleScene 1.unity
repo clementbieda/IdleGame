@@ -205,6 +205,82 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &11684535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 11684536}
+  - component: {fileID: 11684538}
+  - component: {fileID: 11684537}
+  m_Layer: 5
+  m_Name: MoneyView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &11684536
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11684535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1283076809}
+  m_Father: {fileID: 981950478}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -616, y: -62}
+  m_SizeDelta: {x: 376.8022, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &11684537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11684535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.8706172, b: 0.28773582, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: bbfd9a2c4b50c3d4aa9e2eb6684e8f69, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &11684538
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11684535}
+  m_CullTransparentMesh: 1
 --- !u!1001 &13490500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -944,7 +1020,7 @@ RectTransform:
   - {fileID: 1750280343}
   - {fileID: 2900993211844265034}
   m_Father: {fileID: 981950478}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3415,7 +3491,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 981950478}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3729,11 +3805,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8854371085671900714, guid: 172b23aed65917447b08c675d6147222, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 51.47522
+      value: -368
       objectReference: {fileID: 0}
     - target: {fileID: 8854371085671900714, guid: 172b23aed65917447b08c675d6147222, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 124.29265
+      value: -282
       objectReference: {fileID: 0}
     - target: {fileID: 8854371085671900714, guid: 172b23aed65917447b08c675d6147222, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4814,7 +4890,7 @@ RectTransform:
   m_Children:
   - {fileID: 862343636}
   m_Father: {fileID: 981950478}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -4943,7 +5019,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 981950478}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5520,7 +5596,7 @@ RectTransform:
   - {fileID: 185900588}
   - {fileID: 1201329690}
   m_Father: {fileID: 981950478}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5667,12 +5743,12 @@ RectTransform:
   - {fileID: 1823935359}
   - {fileID: 2016125509}
   - {fileID: 417177910}
-  - {fileID: 1283076809}
   - {fileID: 944168508}
   - {fileID: 790766506}
   - {fileID: 791542714}
   - {fileID: 73626343}
   - {fileID: 508073500}
+  - {fileID: 11684536}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7174,16 +7250,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283076808}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 981950478}
-  m_RootOrder: 7
+  m_Father: {fileID: 11684536}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -259, y: -38.46997}
+  m_AnchoredPosition: {x: -69, y: -47.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1283076810
@@ -7219,7 +7295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Money
+  m_text: 'Money :'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d368a3f922b22ba448e29fedfe05b5ba, type: 2}
   m_sharedMaterial: {fileID: -2329642481886640411, guid: d368a3f922b22ba448e29fedfe05b5ba, type: 2}
@@ -12118,20 +12194,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 480255491}
     m_Modifications:
     - target: {fileID: 1610297102883438200, guid: 20cd9ca58ac405a408f43484b7121e8f, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.745283
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610297102883438200, guid: 20cd9ca58ac405a408f43484b7121e8f, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.745283
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610297102883438200, guid: 20cd9ca58ac405a408f43484b7121e8f, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.745283
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610297102883438200, guid: 20cd9ca58ac405a408f43484b7121e8f, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.a
-      value: 0.38431373
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1610297102883438200, guid: 20cd9ca58ac405a408f43484b7121e8f, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.3584906
+      value: 0.9056604
       objectReference: {fileID: 0}
     - target: {fileID: 1610297102883438200, guid: 20cd9ca58ac405a408f43484b7121e8f, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.3584906
+      value: 0.9056604
       objectReference: {fileID: 0}
     - target: {fileID: 1610297102883438200, guid: 20cd9ca58ac405a408f43484b7121e8f, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.3584906
+      value: 0.9056604
       objectReference: {fileID: 0}
     - target: {fileID: 1610297102883438200, guid: 20cd9ca58ac405a408f43484b7121e8f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -12976,11 +13064,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8854371085671900714, guid: 172b23aed65917447b08c675d6147222, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -116.7
+      value: -625
       objectReference: {fileID: 0}
     - target: {fileID: 8854371085671900714, guid: 172b23aed65917447b08c675d6147222, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 97.2
+      value: -280
       objectReference: {fileID: 0}
     - target: {fileID: 8854371085671900714, guid: 172b23aed65917447b08c675d6147222, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
