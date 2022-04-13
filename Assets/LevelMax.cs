@@ -7,13 +7,13 @@ public class LevelMax : MonoBehaviour
 {
     public Button yourbutton;
 
-    public int level = 1;
+    public int level; //mettre  1 pour le premier et 0 pour les autres
 
     public void DisableButton ()
     {
         level++;
         
-        if (level == 5)
+        if (level == 6)
         {
             yourbutton.interactable = false;
         }
