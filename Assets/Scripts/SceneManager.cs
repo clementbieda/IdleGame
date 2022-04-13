@@ -30,4 +30,9 @@ public class SceneManager : MonoBehaviour
         Debug.Log ("clique quit détecté");
     }
 
+    public void Menu ()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu_");
+    }
+
 }
