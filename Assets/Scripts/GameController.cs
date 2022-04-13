@@ -71,7 +71,7 @@ public class GameController : MonoBehaviour
     //Spawn Characters
     public GameObject CharacterPrefab;
     public int ennemyWave;
-    public float spawnTime = 1.0f;
+    public float spawnTime = 10f;
     public bool isInGame = true;
 
     public float waveTime;
@@ -169,6 +169,7 @@ public class GameController : MonoBehaviour
     private void spawnClient()
     {
         GameObject a = Instantiate(CharacterPrefab) as GameObject;
+        //Instantiate(CharacterPrefab, new Vector3(-15, -7, 0), Quaternion.identity);
     }
 
     IEnumerator WaveGenerate()
