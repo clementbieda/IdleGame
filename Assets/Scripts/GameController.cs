@@ -275,5 +275,6 @@ public class GameController : MonoBehaviour
         _gameModel.UpgradeCharacters();
     }
 
+    
 
 }
