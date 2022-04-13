@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 829537308348171656}
   - component: {fileID: 829537306985197388}
   m_Layer: 0
-  m_Name: Camp Can 1
+  m_Name: Camp Others
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
