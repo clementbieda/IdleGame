@@ -3102,6 +3102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df980ce6c986f1244be0d3bbe8e13645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentClient: {fileID: 0}
+  waitingClient: []
   _timeBarShop: {fileID: 1601663523}
 --- !u!61 &304296792
 BoxCollider2D:
@@ -13373,6 +13375,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df980ce6c986f1244be0d3bbe8e13645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentClient: {fileID: 0}
+  waitingClient: []
   _timeBarShop: {fileID: 855695585}
 --- !u!61 &1158183413
 BoxCollider2D:
@@ -14683,6 +14687,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df980ce6c986f1244be0d3bbe8e13645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentClient: {fileID: 0}
+  waitingClient: []
   _timeBarShop: {fileID: 1273332529}
 --- !u!61 &1457845297
 BoxCollider2D:
@@ -14969,7 +14975,7 @@ MonoBehaviour:
   MaxTime: 3
   ActiveTime: 0
   _tempManager: {fileID: 0}
-  CharacterPrefab: {fileID: 6229495914129751898, guid: c0d7014185fa4c940aace6451eb3de4a, type: 3}
+  CharacterPrefab: {fileID: 1669170555887147075, guid: 7a9032d8671854e4a99b7e43c54e2ef8, type: 3}
   ennemyWave: 0
   spawnTime: 2
   isInGame: 1
@@ -17690,6 +17696,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df980ce6c986f1244be0d3bbe8e13645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentClient: {fileID: 0}
+  waitingClient: []
   _timeBarShop: {fileID: 1547107166}
 --- !u!61 &1951099237
 BoxCollider2D:
@@ -18379,6 +18387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df980ce6c986f1244be0d3bbe8e13645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentClient: {fileID: 0}
+  waitingClient: []
   _timeBarShop: {fileID: 2138232931}
 --- !u!61 &2051657755
 BoxCollider2D:
