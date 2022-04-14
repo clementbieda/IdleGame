@@ -13,27 +13,6 @@ MonoBehaviour:
   m_Name: CampCan
   m_EditorClassIdentifier: 
   m_Labels:
-  - m_Name: Can
-    m_Hash: 1534196786
-    m_CategoryList:
-    - m_Name: 0
-      m_Hash: -186917087
-      m_Sprite: {fileID: 21300000, guid: 9fc1201cc3c73db4fa63b9158eca819b, type: 3}
-    - m_Name: 1
-      m_Hash: -2082672713
-      m_Sprite: {fileID: 21300000, guid: 81998bb0813b5324083ddd1c94cfe005, type: 3}
-    - m_Name: 2
-      m_Hash: 450215437
-      m_Sprite: {fileID: 21300000, guid: cf277a5249bda724895c10e379d77c85, type: 3}
-    - m_Name: 3
-      m_Hash: 1842515611
-      m_Sprite: {fileID: 21300000, guid: 8ed90624de5408d44b6a769d95c1b1c3, type: 3}
-    - m_Name: 4
-      m_Hash: -206169288
-      m_Sprite: {fileID: 21300000, guid: 157f417f64906274990ff15d5bafac59, type: 3}
-    - m_Name: 5
-      m_Hash: -2068763730
-      m_Sprite: {fileID: 21300000, guid: 83c578b641b2e404e9396519ff6feaa2, type: 3}
   - m_Name: Water
     m_Hash: 988953566
     m_CategoryList:
@@ -51,4 +30,76 @@ MonoBehaviour:
       m_Sprite: {fileID: 21300000, guid: 157f417f64906274990ff15d5bafac59, type: 3}
     - m_Name: 5
       m_Hash: -2068763730
+      m_Sprite: {fileID: 21300000, guid: 14637d0685733a24eac4ae02af7827e3, type: 3}
+  - m_Name: Can
+    m_Hash: 1534196786
+    m_CategoryList:
+    - m_Name: 1
+      m_Hash: -2082672713
+      m_Sprite: {fileID: 21300000, guid: 81998bb0813b5324083ddd1c94cfe005, type: 3}
+    - m_Name: 2
+      m_Hash: 450215437
+      m_Sprite: {fileID: 21300000, guid: cf277a5249bda724895c10e379d77c85, type: 3}
+    - m_Name: 3
+      m_Hash: 1842515611
+      m_Sprite: {fileID: 21300000, guid: 8ed90624de5408d44b6a769d95c1b1c3, type: 3}
+    - m_Name: 4
+      m_Hash: -206169288
+      m_Sprite: {fileID: 21300000, guid: 157f417f64906274990ff15d5bafac59, type: 3}
+    - m_Name: 5
+      m_Hash: -2068763730
       m_Sprite: {fileID: 21300000, guid: 83c578b641b2e404e9396519ff6feaa2, type: 3}
+  - m_Name: Bandage
+    m_Hash: 1097271049
+    m_CategoryList:
+    - m_Name: 1
+      m_Hash: -2082672713
+      m_Sprite: {fileID: 21300000, guid: 81998bb0813b5324083ddd1c94cfe005, type: 3}
+    - m_Name: 2
+      m_Hash: 450215437
+      m_Sprite: {fileID: 21300000, guid: cf277a5249bda724895c10e379d77c85, type: 3}
+    - m_Name: 3
+      m_Hash: 1842515611
+      m_Sprite: {fileID: 21300000, guid: 8ed90624de5408d44b6a769d95c1b1c3, type: 3}
+    - m_Name: 4
+      m_Hash: -206169288
+      m_Sprite: {fileID: 21300000, guid: 157f417f64906274990ff15d5bafac59, type: 3}
+    - m_Name: 5
+      m_Hash: -2068763730
+      m_Sprite: {fileID: 21300000, guid: f109193a705bce0438f133dac07e83e2, type: 3}
+  - m_Name: Gun
+    m_Hash: 1926661051
+    m_CategoryList:
+    - m_Name: 1
+      m_Hash: -2082672713
+      m_Sprite: {fileID: 21300000, guid: 81998bb0813b5324083ddd1c94cfe005, type: 3}
+    - m_Name: 2
+      m_Hash: 450215437
+      m_Sprite: {fileID: 21300000, guid: cf277a5249bda724895c10e379d77c85, type: 3}
+    - m_Name: 3
+      m_Hash: 1842515611
+      m_Sprite: {fileID: 21300000, guid: 8ed90624de5408d44b6a769d95c1b1c3, type: 3}
+    - m_Name: 4
+      m_Hash: -206169288
+      m_Sprite: {fileID: 21300000, guid: 157f417f64906274990ff15d5bafac59, type: 3}
+    - m_Name: 5
+      m_Hash: -2068763730
+      m_Sprite: {fileID: 21300000, guid: 78aa226de60ee8f47a8c712ba1301d56, type: 3}
+  - m_Name: Shield
+    m_Hash: 423614430
+    m_CategoryList:
+    - m_Name: 1
+      m_Hash: -2082672713
+      m_Sprite: {fileID: 21300000, guid: 81998bb0813b5324083ddd1c94cfe005, type: 3}
+    - m_Name: 2
+      m_Hash: 450215437
+      m_Sprite: {fileID: 21300000, guid: cf277a5249bda724895c10e379d77c85, type: 3}
+    - m_Name: 3
+      m_Hash: 1842515611
+      m_Sprite: {fileID: 21300000, guid: 8ed90624de5408d44b6a769d95c1b1c3, type: 3}
+    - m_Name: 4
+      m_Hash: -206169288
+      m_Sprite: {fileID: 21300000, guid: 157f417f64906274990ff15d5bafac59, type: 3}
+    - m_Name: 5
+      m_Hash: -2068763730
+      m_Sprite: {fileID: 21300000, guid: 280727472539c6b4e8d5685873ed4604, type: 3}
