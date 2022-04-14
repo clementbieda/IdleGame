@@ -6,6 +6,12 @@ using System.Linq;
 
 public class CampLevel : MonoBehaviour
 {
+
+    public Button yourbutton;
+
+    public int level; //mettre  1 pour le premier et 0 pour les autres
+
+
     [SerializeField]
     private SpriteLibrary spriteLibrary = default;
 
@@ -32,6 +38,17 @@ public class CampLevel : MonoBehaviour
 
     targetResolver.SetCategoryAndLabel(targetCategory, label);
 
+
+    }
+
+    public void DisableButton()
+    {
+        level++;
+
+        if (level == 5)
+        {
+            yourbutton.interactable = false;
+        }
 
     }
 

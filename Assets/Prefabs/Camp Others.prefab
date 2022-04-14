@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 829537308348171668}
   - component: {fileID: 829537308348171659}
   - component: {fileID: 829537308348171656}
-  - component: {fileID: 829537306985197388}
   m_Layer: 0
   m_Name: Camp Others
   m_TagString: Untagged
@@ -125,20 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cbdd5229743ba4c9f7fafbf5c5d85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  yourbutton: {fileID: 0}
+  level: 0
   spriteLibrary: {fileID: 829537308348171669}
   targetResolver: {fileID: 829537308348171668}
   targetCategory: Can
---- !u!114 &829537306985197388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 829537308348171671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da0829056ef01f94b9832a6a1b25b10c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  yourbutton: {fileID: 0}
-  level: 0
