@@ -138,11 +138,11 @@ public class GameController : MonoBehaviour
         _GunShopButton.onClick.AddListener(ClicOnGunShop);
         _ShieldShopButton.onClick.AddListener(ClicOnShieldShop);
 
-        _waterTriggerShop.AddListener(OnTriggerWaterShop);
-        _canTriggerShop.AddListener(OnTriggerCanShop);
-        _bandageTriggerShop.AddListener(OnTriggerBandageShop);
-        _gunTriggerShop.AddListener(OnTriggerGunShop);
-        _shieldTriggerShop.AddListener(OnTriggerShieldShop);
+        _waterTriggerShop._timeBarShop.AddListener(OnTriggerWaterShop);
+        _canTriggerShop._timeBarShop.AddListener(OnTriggerCanShop);
+        _bandageTriggerShop._timeBarShop.AddListener(OnTriggerBandageShop);
+        _gunTriggerShop._timeBarShop.AddListener(OnTriggerGunShop);
+        _shieldTriggerShop._timeBarShop.AddListener(OnTriggerShieldShop);
 
         // LOAD GAME if needed
         if (SceneManager.LOAD_GAME)

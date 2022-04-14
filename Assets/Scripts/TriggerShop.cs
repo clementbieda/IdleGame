@@ -6,8 +6,11 @@ using UnityEngine.Events;
 public class TriggerShop : MonoBehaviour
 {
     UnityEvent _onTriggerShop;
-    UnityEvent _onGetMoney;
-    [SerializeField] TimeBarShop _timeBarShop;
+
+    public CharactersMovement currentClient;
+    public List<CharactersMovement> waitingClient;
+
+    [SerializeField] public TimeBarShop _timeBarShop;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,13 +25,43 @@ public class TriggerShop : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        _onTriggerShop.Invoke();
-        collision.GetComponent<CharactersMovement>().Stop();
-        _timeBarShop.AddListener(collision.GetComponent<CharactersMovement>().Play);
+        if (_onTriggerShop != null)
+        {
+            _onTriggerShop.Invoke();
+
+        }
+
+        if (currentClient == null)
+        {
+            currentClient = collision.GetComponent<CharactersMovement>();
+            StartTimeBar();
+        }
+        else
+        {
+            waitingClient.Add(collision.GetComponent<CharactersMovement>());
+            collision.GetComponent<CharactersMovement>().Stop();
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (waitingClient.Count > 0)
+        {
+            currentClient = waitingClient[0];
+            waitingClient.Remove(currentClient);
+            StartTimeBar();
+        }
+        else
+        {
+            currentClient = null;
+        }
+    }
+
+    void StartTimeBar()
+    {
+        currentClient.Stop();
+        _timeBarShop.AddListener(currentClient.Play);
         _timeBarShop.isClientInShop = true;
-        
-
-
     }
 
     public void AddListener(UnityAction listener)
@@ -38,14 +71,5 @@ public class TriggerShop : MonoBehaviour
             _onTriggerShop = new UnityEvent();
         }
         _onTriggerShop.AddListener(listener);
-    }
-
-    public void AddListenerMoney(UnityAction listener)
-    {
-        if (_onGetMoney == null)
-        {
-            _onGetMoney = new UnityEvent();
-        }
-        _onGetMoney.AddListener(listener);
     }
 }
