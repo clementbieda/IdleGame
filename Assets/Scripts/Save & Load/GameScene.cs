@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnitySceneManager = UnityEngine.SceneManagement.SceneManager;
 
 public class GameScene : MonoBehaviour
 {
@@ -23,6 +24,6 @@ public class GameScene : MonoBehaviour
     public void NewGame()
     {
         PlayerPrefs.DeleteKey("name");
-        //SceneManager.LoadScene("SampleScene 1");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene 1");
     }
 }
