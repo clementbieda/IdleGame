@@ -3,13 +3,19 @@ using UnityEngine.UI;
 using UnityEngine.Experimental.U2D.Animation;
 using UnityEngine.U2D;
 using System.Linq;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 
 public class CampLevel : MonoBehaviour
 {
+    public bool etat = true;
+    public bool etat2 = true;
+    public bool etat3 = true;
+    public bool etat4 = true;
+    public bool etat5 = true;
 
-    public Button yourbutton;
-
-    public int level; //mettre  1 pour le premier et 0 pour les autres
+    //mettre  1 pour le premier et 0 pour les autres
 
 
     [SerializeField]
@@ -41,16 +47,48 @@ public class CampLevel : MonoBehaviour
 
     }
 
-    public void DisableButton()
+    public void ButtonClick()
     {
-        level++;
-
-        if (level == 5)
+        if (etat)
         {
-            yourbutton.interactable = false;
+            SelectRandom();
+            etat = false;
         }
-
     }
+    public void ButtonClick2()
+    {
+        if (etat2)
+        {
+            SelectRandom();
+            etat2 = false;
+        }
+    }
+    public void ButtonClick3()
+    {
+        if (etat3)
+        {
+            SelectRandom();
+            etat3 = false;
+        }
+    }
+    public void ButtonClick4()
+    {
+        if (etat4)
+        {
+            SelectRandom();
+            etat4 = false;
+        }
+    }
+    public void ButtonClick5()
+    {
+        if (etat5)
+        {
+            SelectRandom();
+            etat5 = false;
+        }
+    }
+
+
 
 
 
