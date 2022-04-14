@@ -88,6 +88,9 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    
+       
+
         _gameModel = new GameModel();
         _gameModel.GetMoney().Subscribe(moneyView);
 
@@ -97,7 +100,6 @@ public class GameController : MonoBehaviour
         _gameModel.GetBandages().Subscribe(bandageView);
         _gameModel.GetGun().Subscribe(gunView);
         _gameModel.GetShield().Subscribe(shieldView);
-
 
         //
         _gameModel.GetAmountWater().Subscribe(waterAmountView);
@@ -142,6 +144,16 @@ public class GameController : MonoBehaviour
         _gunTriggerShop.AddListener(OnTriggerGunShop);
         _shieldTriggerShop.AddListener(OnTriggerShieldShop);
 
+        // LOAD GAME if needed
+        if (SceneManager.LOAD_GAME)
+        {
+            string savedMoney = PlayerPrefs.GetString("money");
+
+            float savedMoneyFloat = float.Parse(savedMoney);
+
+            _gameModel.GetMoney().Set(savedMoneyFloat);
+
+        }
 
         //On appelle la fonction qui génère les vagues dans le start
         StartCoroutine(WaveGenerate());

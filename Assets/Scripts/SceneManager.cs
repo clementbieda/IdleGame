@@ -3,12 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class SceneManager : MonoBehaviour
 {
+    public static bool LOAD_GAME;
+
+
+
     // Start is called before the first frame update
-    public void PlayGame ()
+    public void NewGame ()
     {
+        LOAD_GAME = false;
+        PlayerPrefs.DeleteKey("money");
+        PlayerPrefs.Save();
         UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene 1");
         Debug.Log("clique play détecté");
     }
@@ -19,8 +27,10 @@ public class SceneManager : MonoBehaviour
         Debug.Log("clique options détecté");
     }
 
-    public void Charger()
+    public void LoadGame()
     {
+        LOAD_GAME = true;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene 1");
         Debug.Log("clique load détecté");
     }
 
@@ -34,5 +44,7 @@ public class SceneManager : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Menu_");
     }
+
+    
 
 }
