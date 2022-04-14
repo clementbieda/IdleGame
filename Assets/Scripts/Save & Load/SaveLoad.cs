@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SaveLoad : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class SaveLoad : MonoBehaviour
 
     public void clickSaveButton()
     {
-        PlayerPrefs.SetString("money", currentMoney.text);
+        //PlayerPrefs.SetString("money", currentMoney.text);
         Debug.Log("Tu as " + PlayerPrefs.GetString("money"));
     }
 
