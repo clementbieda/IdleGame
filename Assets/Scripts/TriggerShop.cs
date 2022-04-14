@@ -26,6 +26,7 @@ public class TriggerShop : MonoBehaviour
         collision.GetComponent<CharactersMovement>().Stop();
         _timeBarShop.AddListener(collision.GetComponent<CharactersMovement>().Play);
         _timeBarShop.isClientInShop = true;
+        
 
 
     }

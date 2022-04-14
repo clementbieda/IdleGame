@@ -162,32 +162,27 @@ public class GameController : MonoBehaviour
     
     private void OnTriggerShieldShop()
     {
-        Debug.Log("Un client est entré dans le Shield Shop");
-
+        _gameModel.HitShield();
     }
 
     private void OnTriggerGunShop()
     {
-        Debug.Log("Un client est entré dans le Gun Shop");
-        
+        _gameModel.HitGun();
     }
 
     private void OnTriggerBandageShop()
     {
-        Debug.Log("Un client est entré dans le Bandage Shop");
-        
+        _gameModel.HitBandage();
     }
 
     private void OnTriggerCanShop()
     {
-        Debug.Log("Un client est entré dans le Can Shop");
-        
+        _gameModel.HitCan();
     }
     
     private void OnTriggerWaterShop()
     {
-        Debug.Log("Un client est entré dans le Water Shop");
-        
+        _gameModel.HitWater();
     }
     
     private void spawnClient()

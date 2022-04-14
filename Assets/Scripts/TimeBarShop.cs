@@ -60,6 +60,10 @@ public class TimeBarShop : MonoBehaviour
 
     public void AddListener(UnityAction listener)
     {
+        if (onTimerFinished == null)
+        {
+            onTimerFinished = new UnityEvent();
+        }
         onTimerFinished.AddListener(listener);
     }
 }
