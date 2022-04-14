@@ -10,8 +10,8 @@ public class CharactersMovement : MonoBehaviour
 
     public int current;
 
-    float currentMoveSpeed;
-    [SerializeField] float standardMoveSpeed;
+    public float currentMoveSpeed;
+    [SerializeField] public float standardMoveSpeed;
     int waypointIndex = 0;
     // Start is called before the first frame update
     void Start()

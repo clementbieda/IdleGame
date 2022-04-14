@@ -42,19 +42,21 @@ public class GameController : MonoBehaviour
     public FloatView moneyView;
 
 
-    //Shop
+    //ShopItemView
     public FloatView waterView;
     public FloatView canView;
     public FloatView bandageView;
     public FloatView gunView;
     public FloatView shieldView;
 
+    //ShopUpgradeMagasinsView
     public FloatView tempManagerView;
     public FloatView frequenceView;
     public FloatView venteX2View;
     public FloatView baratinageView;
     public FloatView upgradeCharacterView;
 
+    //LevelView
     public FloatView waterAmountView;
     public FloatView canAmountView;
     public FloatView bandageAmountView;
@@ -68,12 +70,12 @@ public class GameController : MonoBehaviour
     public TriggerShop _gunTriggerShop;
     public TriggerShop _shieldTriggerShop;
 
-    //Temporalité des managers
-    public float MaxTime = 3f;
-    public float ActiveTime = 0f;
-    public Image _tempManager;
-
-
+    //Variables pour l'avancement des barres de chargement
+    [SerializeField] TimeBarShop _timeBarShopWater;
+    [SerializeField] TimeBarShop _timeBarShopCan;
+    [SerializeField] TimeBarShop _timeBarShopBandage;
+    [SerializeField] TimeBarShop _timeBarShopGun;
+    [SerializeField] TimeBarShop _timeBarShopShield;
 
     //Spawn Characters
     public GameObject CharacterPrefab;
@@ -235,34 +237,55 @@ public class GameController : MonoBehaviour
 
     public void ClicOnWaterShop()
     {
-        _gameModel.HitWater();
+        if (hasClient(_waterTriggerShop))
+        {
+            _timeBarShopWater.progressBarShop.value += 0.06f;
+        }
     }
     public void ClicOnCanShop()
     {
-        _gameModel.HitCan();
+        if (hasClient(_canTriggerShop))
+        {
+            _timeBarShopCan.progressBarShop.value += 0.04f;
+        }
     }
     public void ClicOnBandageShop()
     {
-        _gameModel.HitBandage();
+        if (hasClient(_bandageTriggerShop))
+        {
+            _timeBarShopBandage.progressBarShop.value += 0.03f;
+        }
     }
     public void ClicOnGunShop()
     {
-        _gameModel.HitGun();
+        if (hasClient(_gunTriggerShop))
+        {
+            _timeBarShopGun.progressBarShop.value += 0.02f;
+        }
     }
     public void ClicOnShieldShop()
     {
-        _gameModel.HitShield();
+        if (hasClient(_shieldTriggerShop))
+        {
+            _timeBarShopShield.progressBarShop.value += 0.01f;
+        }
     }
 
     private void UpgradeTempManager()
     {
         _gameModel.DelayManager();
+        _timeBarShopWater.fillSpeed += 0.05f;
+        _timeBarShopCan.fillSpeed += 0.05f;
+        _timeBarShopBandage.fillSpeed += 0.05f;
+        _timeBarShopGun.fillSpeed += 0.05f;
+        _timeBarShopShield.fillSpeed += 0.05f;
     }
 
 
     private void UpgradeFrequence()
     {
         _gameModel.FrequenceClients();
+        spawnTime -= 0.5f;
     }
 
 
@@ -283,6 +306,17 @@ public class GameController : MonoBehaviour
         _gameModel.UpgradeCharacters();
     }
 
-    
+    private bool hasClient(TriggerShop triggerShop)
+    {
+        if (triggerShop.currentClient != null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        return false;
+    }
 
 }
