@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class GameController : MonoBehaviour
 {
@@ -78,7 +79,11 @@ public class GameController : MonoBehaviour
     [SerializeField] TimeBarShop _timeBarShopShield;
 
     //Spawn Characters
+    private int i;
     public GameObject CharacterPrefab;
+    public GameObject CharacterPrefab2;
+    public GameObject CharacterPrefab3;
+
     public int ennemyWave;
     [SerializeField] private float spawnTime;
     public bool isInGame = true;
@@ -189,7 +194,21 @@ public class GameController : MonoBehaviour
     
     private void spawnClient()
     {
-        GameObject client = GameObject.Instantiate(CharacterPrefab);
+        int i = Random.Range(1, 4);
+        GameObject obj;
+        if (i == 2)
+        {
+            obj = GameObject.Instantiate(CharacterPrefab);
+        }
+        else if (i == 1)
+        {
+            obj = GameObject.Instantiate(CharacterPrefab2);
+        }
+        else
+        {
+            obj = GameObject.Instantiate(CharacterPrefab3);
+        }
+        GameObject client = obj;
         client.GetComponent<CharactersMovement>().Init(_waypointsWater, _waypointsCan, _waypointsBandage, _waypointsGun, _waypointsShield);
         //Instantiate(CharacterPrefab, new Vector3(-15, -7, 0), Quaternion.identity);
     }

@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class CharactersMovement : MonoBehaviour
 {
+    //animator & animation pour que les perso s'arrêtent à la collision (idle animation)
+    Animator m_Animator;
+
+
     private List<List<Transform>> waypoints;
     public bool stop = false;
 
@@ -16,7 +20,7 @@ public class CharactersMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        m_Animator = gameObject.GetComponent<Animator>();
 
         
         
@@ -45,6 +49,7 @@ public class CharactersMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Move();
     }
 
@@ -56,11 +61,13 @@ public class CharactersMovement : MonoBehaviour
 
         if (transform.position == waypoints[current][waypointIndex].transform.position)
         {
+            m_Animator.SetBool("IsWalkingRight", true);
             waypointIndex += 1;
         }
 
         if (waypointIndex == waypoints[current].Count)
         {
+            m_Animator.SetBool("IsWalkingRight", true);
             Destroy(gameObject);
         }
         
@@ -68,6 +75,8 @@ public class CharactersMovement : MonoBehaviour
 
     public void Stop()
     {
+        m_Animator.SetBool("IsWalkingRight", false);
         currentMoveSpeed = 0;
+        
     }
 }

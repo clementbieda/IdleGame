@@ -14972,15 +14972,14 @@ MonoBehaviour:
   _bandageTriggerShop: {fileID: 1951099236}
   _gunTriggerShop: {fileID: 2051657754}
   _shieldTriggerShop: {fileID: 1457845296}
-  MaxTime: 3
-  ActiveTime: 0
-  _tempManager: {fileID: 0}
   _timeBarShopWater: {fileID: 855695585}
   _timeBarShopCan: {fileID: 1601663523}
   _timeBarShopBandage: {fileID: 1547107166}
   _timeBarShopGun: {fileID: 2138232931}
   _timeBarShopShield: {fileID: 1273332529}
   CharacterPrefab: {fileID: 1669170555887147075, guid: 7a9032d8671854e4a99b7e43c54e2ef8, type: 3}
+  CharacterPrefab2: {fileID: 1669170555887147075, guid: 530fba28d4489a9439c81dad5d5bd0fa, type: 3}
+  CharacterPrefab3: {fileID: 8252499692883408523, guid: de688370a8bb530419badec57c36cff7, type: 3}
   ennemyWave: 0
   spawnTime: 2
   isInGame: 1
