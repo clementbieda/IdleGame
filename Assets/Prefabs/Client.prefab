@@ -97,13 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559e9bc35d54e1d4facd414019d1acc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypointsWater: []
-  waypointsCan: []
-  waypointsBandage: []
-  waypointsGun: []
-  waypointsShield: []
+  stop: 0
   current: 0
-  moveSpeed: 5
+  standardMoveSpeed: 5
 --- !u!61 &6229495914129751902
 BoxCollider2D:
   m_ObjectHideFlags: 0

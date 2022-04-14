@@ -6,15 +6,12 @@ using UnityEngine;
 public class CharactersMovement : MonoBehaviour
 {
     private List<List<Transform>> waypoints;
-
-    
-
-
+    public bool stop = false;
 
     public int current;
 
-    [SerializeField] float moveSpeed;
-
+    float currentMoveSpeed;
+    [SerializeField] float standardMoveSpeed;
     int waypointIndex = 0;
     // Start is called before the first frame update
     void Start()
@@ -37,6 +34,12 @@ public class CharactersMovement : MonoBehaviour
 
         current = Random.Range(0, 5);
         transform.position = waypoints[current][waypointIndex].transform.position;
+        currentMoveSpeed = standardMoveSpeed;
+    }
+
+    internal void Play()
+    {
+        currentMoveSpeed = standardMoveSpeed;
     }
 
     // Update is called once per frame
@@ -45,11 +48,11 @@ public class CharactersMovement : MonoBehaviour
         Move();
     }
 
-    private void Move()
+    public void Move()
     {
         
 
-        transform.position = Vector2.MoveTowards(transform.position, waypoints[current][waypointIndex].transform.position, moveSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, waypoints[current][waypointIndex].transform.position, currentMoveSpeed * Time.deltaTime);
 
         if (transform.position == waypoints[current][waypointIndex].transform.position)
         {
@@ -61,5 +64,10 @@ public class CharactersMovement : MonoBehaviour
             Destroy(gameObject);
         }
         
+    }
+
+    public void Stop()
+    {
+        currentMoveSpeed = 0;
     }
 }

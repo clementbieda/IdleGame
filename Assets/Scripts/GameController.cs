@@ -134,9 +134,9 @@ public class GameController : MonoBehaviour
 
         _WaterShopButton.onClick.AddListener(ClicOnWaterShop);
         _CanShopButton.onClick.AddListener(ClicOnCanShop);
-        //_BandageShopButton.onClick.AddListener(ClicOnBandageShop);
-        //_GunShopButton.onClick.AddListener(ClicOnGunShop);
-        //_ShieldShopButton.onClick.AddListener(ClicOnShieldShop);
+        _BandageShopButton.onClick.AddListener(ClicOnBandageShop);
+        _GunShopButton.onClick.AddListener(ClicOnGunShop);
+        _ShieldShopButton.onClick.AddListener(ClicOnShieldShop);
 
         _waterTriggerShop.AddListener(OnTriggerWaterShop);
         _canTriggerShop.AddListener(OnTriggerCanShop);
@@ -163,26 +163,31 @@ public class GameController : MonoBehaviour
     private void OnTriggerShieldShop()
     {
         Debug.Log("Un client est entré dans le Shield Shop");
+
     }
 
     private void OnTriggerGunShop()
     {
         Debug.Log("Un client est entré dans le Gun Shop");
+        
     }
 
     private void OnTriggerBandageShop()
     {
         Debug.Log("Un client est entré dans le Bandage Shop");
+        
     }
 
     private void OnTriggerCanShop()
     {
         Debug.Log("Un client est entré dans le Can Shop");
+        
     }
     
     private void OnTriggerWaterShop()
     {
         Debug.Log("Un client est entré dans le Water Shop");
+        
     }
     
     private void spawnClient()
