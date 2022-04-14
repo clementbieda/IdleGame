@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf7c34a0dc4e6348bea04faa70406ee, type: 3}
+  m_Name: Client
+  m_EditorClassIdentifier: 
+  m_Labels:
+  - m_Name: Brun
+    m_Hash: -1083297160
+    m_CategoryList:
+    - m_Name: brun
+      m_Hash: 526163270
+      m_Sprite: {fileID: 8838736017869782043, guid: d3540643bb3bf8549a803761647aac5a, type: 3}
+  - m_Name: Roux
+    m_Hash: 257810581
+    m_CategoryList:
+    - m_Name: roux
+      m_Hash: -1351659605
+      m_Sprite: {fileID: 1656765089719116672, guid: 4b6ae59c4f73d7a4999fba71c1be4e08, type: 3}
+  - m_Name: Blonde
+    m_Hash: -1294620029
+    m_CategoryList:
+    - m_Name: blonde
+      m_Hash: -1250316363
+      m_Sprite: {fileID: -883772857435010421, guid: d4a987bd50b474f46a5b08c4fc87a77d, type: 3}
