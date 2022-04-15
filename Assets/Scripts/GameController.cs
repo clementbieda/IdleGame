@@ -83,6 +83,7 @@ public class GameController : MonoBehaviour
     public GameObject CharacterPrefab;
     public GameObject CharacterPrefab2;
     public GameObject CharacterPrefab3;
+    public GameObject MilitairePrefab;
 
     public int ennemyWave;
     [SerializeField] private float spawnTime;
@@ -194,19 +195,23 @@ public class GameController : MonoBehaviour
     
     private void spawnClient()
     {
-        int i = Random.Range(1, 4);
+        int i = Random.Range(1, 100);
         GameObject obj;
-        if (i == 2)
+        if (i < 25)
         {
             obj = GameObject.Instantiate(CharacterPrefab);
         }
-        else if (i == 1)
+        else if (i < 50)
         {
             obj = GameObject.Instantiate(CharacterPrefab2);
         }
+        else if (i >90)
+        {
+            obj = GameObject.Instantiate(MilitairePrefab);
+        }
         else
         {
-            obj = GameObject.Instantiate(CharacterPrefab3);
+            obj = GameObject.Instantiate(CharacterPrefab);
         }
         GameObject client = obj;
         client.GetComponent<CharactersMovement>().Init(_waypointsWater, _waypointsCan, _waypointsBandage, _waypointsGun, _waypointsShield);

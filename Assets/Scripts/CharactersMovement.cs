@@ -35,7 +35,6 @@ public class CharactersMovement : MonoBehaviour
         waypoints.Add(waypointsGun);
         waypoints.Add(waypointsShield);
 
-
         current = Random.Range(0, 5);
         transform.position = waypoints[current][waypointIndex].transform.position;
         currentMoveSpeed = standardMoveSpeed;
