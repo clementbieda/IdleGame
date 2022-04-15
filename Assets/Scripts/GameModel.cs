@@ -15,11 +15,11 @@ public class GameModel
 
     public int nbUpgrades = 0;
 
-    const float PERCENT_UPGRADE_WATER = 0.15f;
-    const float PERCENT_UPGRADE_CAN = 0.24f;
-    const float PERCENT_UPGRADE_BANDAGE = 0.3f;
-    const float PERCENT_UPGRADE_GUN = 0.41f;
-    const float PERCENT_UPGRADE_SHIELD = 0.5f;
+    const float PERCENT_UPGRADE_WATER = 0.1f;
+    const float PERCENT_UPGRADE_CAN = 0.15f;
+    const float PERCENT_UPGRADE_BANDAGE = 0.2f;
+    const float PERCENT_UPGRADE_GUN = 0.25f;
+    const float PERCENT_UPGRADE_SHIELD = 0.3f;
 
     const float PERCENT_UPGRADE_TEMP_MANAGER = 0.20f;
     const float PERCENT_UPGRADE_VENTEX2 = 0.34f;
@@ -180,10 +180,10 @@ public class GameModel
 
 
         hitPowerWater = 10;
-        hitPowerCan = 2;
-        hitPowerBandage = 20;
-        hitPowerGun = 100;
-        hitPowerShield = 500;
+        hitPowerCan = 30;
+        hitPowerBandage = 183;
+        hitPowerGun = 1824;
+        hitPowerShield = 27840;
 
 
         moneyIncreasePerSecond = 1;
@@ -191,11 +191,11 @@ public class GameModel
         thresholdWinX2 = 0.3f;
 
 
-        waterPrice = new FloatObservable(25);
-        canPrice = new FloatObservable(100);
-        bandagePrice = new FloatObservable(1000);
-        gunPrice = new FloatObservable(10000);
-        shieldPrice = new FloatObservable(50000);
+        waterPrice = new FloatObservable(100);
+        canPrice = new FloatObservable(500);
+        bandagePrice = new FloatObservable(2000);
+        gunPrice = new FloatObservable(15000);
+        shieldPrice = new FloatObservable(175000);
 
         tempManagerPrice = new FloatObservable(500);
         frequencePrice = new FloatObservable(500);
@@ -222,7 +222,7 @@ public class GameModel
         if (currentMoney.GetValue() >= waterPrice.GetValue())
         {
             currentMoney.Set(currentMoney.GetValue() - waterPrice.GetValue());
-            hitPowerWater += 1;
+            hitPowerWater += 10 * 0.1f;
             AmountWater.Set(AmountWater.GetValue() + 1);
         }
     }
@@ -233,7 +233,7 @@ public class GameModel
         {
             
             currentMoney.Set(currentMoney.GetValue() - canPrice.GetValue());
-            hitPowerCan += 5;
+            hitPowerCan += 30 * 0.15f;
             AmountCan.Set(AmountCan.GetValue() + 1);
         }
     }
@@ -244,7 +244,7 @@ public class GameModel
         {
             
             currentMoney.Set(currentMoney.GetValue() - bandagePrice.GetValue());
-            hitPowerBandage += 20;
+            hitPowerBandage += 183 * 0.2f;
             AmountBandage.Set(AmountBandage.GetValue() + 1);
         }
     }
@@ -255,7 +255,7 @@ public class GameModel
         {
             
             currentMoney.Set(currentMoney.GetValue() - gunPrice.GetValue());
-            hitPowerGun += 100;
+            hitPowerGun += 1824 * 0.25f;
             AmountGun.Set(AmountGun.GetValue() + 1);
         }
     }
@@ -266,7 +266,7 @@ public class GameModel
         {
             
             currentMoney.Set(currentMoney.GetValue() - shieldPrice.GetValue());
-            hitPowerShield += 500;
+            hitPowerShield += 27840 * 0.3f;
             AmountShield.Set(AmountShield.GetValue() + 1);
         }
     }

@@ -1102,7 +1102,7 @@ PrefabInstance:
       objectReference: {fileID: 65514251}
     - target: {fileID: 3400306625434413395, guid: 64f29213c9237174da85e0b76c72c554, type: 3}
       propertyPath: m_text
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3400306625434413395, guid: 64f29213c9237174da85e0b76c72c554, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -1644,7 +1644,7 @@ PrefabInstance:
       objectReference: {fileID: 74296274}
     - target: {fileID: 3400306625434413395, guid: 64f29213c9237174da85e0b76c72c554, type: 3}
       propertyPath: m_text
-      value: '25
+      value: '100
 
 '
       objectReference: {fileID: 0}
@@ -2749,7 +2749,7 @@ PrefabInstance:
       objectReference: {fileID: 198529409}
     - target: {fileID: 3400306625434413395, guid: 64f29213c9237174da85e0b76c72c554, type: 3}
       propertyPath: m_text
-      value: '5000
+      value: '500
 
 '
       objectReference: {fileID: 0}
@@ -4783,9 +4783,7 @@ PrefabInstance:
       objectReference: {fileID: 464003449}
     - target: {fileID: 3400306625434413395, guid: 64f29213c9237174da85e0b76c72c554, type: 3}
       propertyPath: m_text
-      value: '15500
-
-'
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3400306625434413395, guid: 64f29213c9237174da85e0b76c72c554, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -9485,7 +9483,7 @@ PrefabInstance:
       objectReference: {fileID: 1135241843}
     - target: {fileID: 3400306625434413395, guid: 64f29213c9237174da85e0b76c72c554, type: 3}
       propertyPath: m_text
-      value: 50
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3400306625434413395, guid: 64f29213c9237174da85e0b76c72c554, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -11774,7 +11772,7 @@ MonoBehaviour:
   CharacterPrefab3: {fileID: 8252499692883408523, guid: de688370a8bb530419badec57c36cff7, type: 3}
   MilitairePrefab: {fileID: 1669170555887147075, guid: ed17f5b5023ce2545a2b007af0a1e015, type: 3}
   ennemyWave: 0
-  spawnTime: 8
+  spawnTime: 3
   isInGame: 1
   _canAvailable: 0
   _bandageAvailable: 0
@@ -12413,7 +12411,7 @@ PrefabInstance:
       objectReference: {fileID: 1573048464}
     - target: {fileID: 3400306625434413395, guid: 64f29213c9237174da85e0b76c72c554, type: 3}
       propertyPath: m_text
-      value: 22000
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3400306625434413395, guid: 64f29213c9237174da85e0b76c72c554, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -14758,7 +14756,7 @@ PrefabInstance:
       objectReference: {fileID: 1884869886}
     - target: {fileID: 3400306625434413395, guid: 64f29213c9237174da85e0b76c72c554, type: 3}
       propertyPath: m_text
-      value: '150000
+      value: '500
 
 '
       objectReference: {fileID: 0}
@@ -15207,7 +15205,7 @@ PrefabInstance:
       objectReference: {fileID: 1924763637}
     - target: {fileID: 3400306625434413395, guid: 64f29213c9237174da85e0b76c72c554, type: 3}
       propertyPath: m_text
-      value: 250
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 3400306625434413395, guid: 64f29213c9237174da85e0b76c72c554, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -15667,9 +15665,7 @@ PrefabInstance:
       objectReference: {fileID: 1979215373}
     - target: {fileID: 3400306625434413395, guid: 64f29213c9237174da85e0b76c72c554, type: 3}
       propertyPath: m_text
-      value: '3000
-
-'
+      value: 15000
       objectReference: {fileID: 0}
     - target: {fileID: 3400306625434413395, guid: 64f29213c9237174da85e0b76c72c554, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -17040,9 +17036,7 @@ PrefabInstance:
       objectReference: {fileID: 241635349796444710}
     - target: {fileID: 3400306625434413395, guid: 64f29213c9237174da85e0b76c72c554, type: 3}
       propertyPath: m_text
-      value: '12500
-
-'
+      value: 175000
       objectReference: {fileID: 0}
     - target: {fileID: 3400306625434413395, guid: 64f29213c9237174da85e0b76c72c554, type: 3}
       propertyPath: m_fontColor32.rgba
