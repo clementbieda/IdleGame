@@ -50,11 +50,11 @@ public class GameModel
     public int shopPrizeGun;
     public int shopPrizeShield;
 
-    private FloatObservable waterPrice;
-    private FloatObservable canPrice;
-    private FloatObservable bandagePrice;
-    private FloatObservable gunPrice;
-    private FloatObservable shieldPrice;
+    public FloatObservable waterPrice;
+    public FloatObservable canPrice;
+    public FloatObservable bandagePrice;
+    public FloatObservable gunPrice;
+    public FloatObservable shieldPrice;
 
 
     //Amount

@@ -290,7 +290,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            obj = GameObject.Instantiate(CharacterPrefab);
+            obj = GameObject.Instantiate(CharacterPrefab3);
         }
         GameObject client = obj;
         client.GetComponent<CharactersMovement>().Init(_waypointsWater, _waypointsCan, _waypointsBandage, _waypointsGun, _waypointsShield, _canAvailable, _bandageAvailable, _gunAvailable, _shieldAvailable);
@@ -314,7 +314,7 @@ public class GameController : MonoBehaviour
 
     private void UpgradeCan()
     {
-        if (_gameModel.AmountCan.GetValue() == 0)
+        if (_gameModel.AmountCan.GetValue() == 0 && _gameModel.currentMoney.GetValue() >= _gameModel.canPrice.GetValue())
         {
             _CanShopCampLevel.Available();
             _canAvailable = true;
@@ -324,7 +324,7 @@ public class GameController : MonoBehaviour
 
     private void UpgradeBandage()
     {
-        if (_gameModel.AmountBandage.GetValue() == 0)
+        if (_gameModel.AmountBandage.GetValue() == 0 && _gameModel.currentMoney.GetValue() >= _gameModel.bandagePrice.GetValue())
         {
             _BandageShopCampLevel.Available();
 
@@ -335,7 +335,7 @@ public class GameController : MonoBehaviour
 
     private void UpgradeGun()
     {
-        if (_gameModel.AmountGun.GetValue() == 0)
+        if (_gameModel.AmountGun.GetValue() == 0 && _gameModel.currentMoney.GetValue() >= _gameModel.gunPrice.GetValue())
         {
             _GunShopCampLevel.Available();
 
@@ -346,7 +346,7 @@ public class GameController : MonoBehaviour
 
     private void UpgradeShield()
     {
-        if (_gameModel.AmountShield.GetValue() == 0)
+        if (_gameModel.AmountShield.GetValue() == 0 && _gameModel.currentMoney.GetValue() >= _gameModel.shieldPrice.GetValue())
         {
             _ShieldShopCampLevel.Available();
 
