@@ -34,7 +34,7 @@ public class CampLevel : MonoBehaviour
 
     // 
 
-    public void SelectRandom ()
+    public void SelectRandom()
     {
     string[] labels =
       LibraryAsset.GetCategoryLabelNames(targetCategory).ToArray();
