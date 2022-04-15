@@ -18,12 +18,18 @@ public class GameController : MonoBehaviour
     [SerializeField] private Button _upgradeShieldButton;
 
 
+
+
+
     //Boutons d'amélioration pour les magasins
     [SerializeField] private Button _upgradeTempManagerButton;
     [SerializeField] private Button _upgradeFrequenceButton;
     [SerializeField] private Button _upgradeVenteX2Button;
     [SerializeField] private Button _upgradeBaratinageButton;
     [SerializeField] private Button _upgradeCharactersButton;
+
+
+
 
     //Boutons représentant les magasins
     [SerializeField] private Button _WaterShopButton;
@@ -32,15 +38,28 @@ public class GameController : MonoBehaviour
     [SerializeField] private Button _GunShopButton;
     [SerializeField] private Button _ShieldShopButton;
 
-    //waypoints
+
+
+
+    //Waypoints
     [SerializeField] List<Transform> _waypointsWater;
     [SerializeField] List<Transform> _waypointsCan;
     [SerializeField] List<Transform> _waypointsBandage;
     [SerializeField] List<Transform> _waypointsGun;
     [SerializeField] List<Transform> _waypointsShield;
 
+
+
+
     //Money
     public FloatView moneyView;
+
+
+    //Variable pour l'aléatoire
+    public int rnd;
+
+
+
 
 
     //ShopItemView
@@ -50,6 +69,10 @@ public class GameController : MonoBehaviour
     public FloatView gunView;
     public FloatView shieldView;
 
+
+
+
+
     //ShopUpgradeMagasinsView
     public FloatView tempManagerView;
     public FloatView frequenceView;
@@ -57,12 +80,20 @@ public class GameController : MonoBehaviour
     public FloatView baratinageView;
     public FloatView upgradeCharacterView;
 
-    //LevelView
+
+
+
+
+    //Levels Amount
     public FloatView waterAmountView;
     public FloatView canAmountView;
     public FloatView bandageAmountView;
     public FloatView gunAmountView;
     public FloatView shieldAmountView;
+
+
+
+
 
     //TriggerShopView
     public TriggerShop _waterTriggerShop;
@@ -70,6 +101,10 @@ public class GameController : MonoBehaviour
     public TriggerShop _bandageTriggerShop;
     public TriggerShop _gunTriggerShop;
     public TriggerShop _shieldTriggerShop;
+
+
+
+
 
     //Variables pour l'avancement des barres de chargement
     [SerializeField] TimeBarShop _timeBarShopWater;
@@ -329,6 +364,7 @@ public class GameController : MonoBehaviour
     private void UpgradeVenteX2()
     {
         _gameModel.VenteX2();
+        rnd = Random.Range(1, 6);
     }
 
 
