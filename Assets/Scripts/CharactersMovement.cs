@@ -35,9 +35,12 @@ public class CharactersMovement : MonoBehaviour
         waypoints.Add(waypointsGun);
         waypoints.Add(waypointsShield);
 
+        // ici pour le militaire faut dire que "si le client == MilitairePrefab" alors il faut passer à "Random.Range(3,5)" ou alors garder en compte que les "waypoints de Gun & Shield"
         current = Random.Range(0, 5);
         transform.position = waypoints[current][waypointIndex].transform.position;
         currentMoveSpeed = standardMoveSpeed;
+
+        
     }
 
     internal void Play()
