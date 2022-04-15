@@ -176,11 +176,11 @@ public class GameModel
     {
         rnd = new System.Random();
 
-        currentMoney = new FloatObservable(0);
+        currentMoney = new FloatObservable(100000);
 
 
-        hitPowerWater = 1;
-        hitPowerCan = 5;
+        hitPowerWater = 10;
+        hitPowerCan = 2;
         hitPowerBandage = 20;
         hitPowerGun = 100;
         hitPowerShield = 500;
@@ -192,16 +192,16 @@ public class GameModel
 
 
         waterPrice = new FloatObservable(25);
-        canPrice = new FloatObservable(50);
-        bandagePrice = new FloatObservable(250);
-        gunPrice = new FloatObservable(3000);
-        shieldPrice = new FloatObservable(12500);
+        canPrice = new FloatObservable(100);
+        bandagePrice = new FloatObservable(1000);
+        gunPrice = new FloatObservable(10000);
+        shieldPrice = new FloatObservable(50000);
 
-        tempManagerPrice = new FloatObservable(1000);
-        frequencePrice = new FloatObservable(5000);
-        venteX2Price = new FloatObservable(15500);
-        baratinagePrice = new FloatObservable(22000);
-        upgradeCharactersPrice = new FloatObservable(150000);
+        tempManagerPrice = new FloatObservable(500);
+        frequencePrice = new FloatObservable(500);
+        venteX2Price = new FloatObservable(500);
+        baratinagePrice = new FloatObservable(500);
+        upgradeCharactersPrice = new FloatObservable(500);
 
         AmountWater = new FloatObservable(0);
         AmountCan = new FloatObservable(0);
@@ -222,7 +222,6 @@ public class GameModel
         if (currentMoney.GetValue() >= waterPrice.GetValue())
         {
             currentMoney.Set(currentMoney.GetValue() - waterPrice.GetValue());
-            waterPrice.Add(PERCENT_UPGRADE_WATER * waterPrice.GetValue());
             hitPowerWater += 1;
             AmountWater.Set(AmountWater.GetValue() + 1);
         }
@@ -234,7 +233,6 @@ public class GameModel
         {
             
             currentMoney.Set(currentMoney.GetValue() - canPrice.GetValue());
-            canPrice.Add(PERCENT_UPGRADE_CAN * canPrice.GetValue());
             hitPowerCan += 5;
             AmountCan.Set(AmountCan.GetValue() + 1);
         }
@@ -246,7 +244,6 @@ public class GameModel
         {
             
             currentMoney.Set(currentMoney.GetValue() - bandagePrice.GetValue());
-            bandagePrice.Add(PERCENT_UPGRADE_BANDAGE * bandagePrice.GetValue());
             hitPowerBandage += 20;
             AmountBandage.Set(AmountBandage.GetValue() + 1);
         }
@@ -258,7 +255,6 @@ public class GameModel
         {
             
             currentMoney.Set(currentMoney.GetValue() - gunPrice.GetValue());
-            gunPrice.Add(PERCENT_UPGRADE_GUN * gunPrice.GetValue());
             hitPowerGun += 100;
             AmountGun.Set(AmountGun.GetValue() + 1);
         }
@@ -270,7 +266,6 @@ public class GameModel
         {
             
             currentMoney.Set(currentMoney.GetValue() - shieldPrice.GetValue());
-            shieldPrice.Add(PERCENT_UPGRADE_SHIELD * shieldPrice.GetValue());
             hitPowerShield += 500;
             AmountShield.Set(AmountShield.GetValue() + 1);
         }
@@ -307,8 +302,8 @@ public class GameModel
         {
             AmountTempManager++;
             currentMoney.Set(currentMoney.GetValue() - tempManagerPrice.GetValue());
-            tempManagerPrice.Add(PERCENT_UPGRADE_TEMP_MANAGER * tempManagerPrice.GetValue());
-            _camplevel.SelectRandom();
+            tempManagerPrice.Add(tempManagerPrice.GetValue() * 2);
+            //_camplevel.SelectRandom();
             
         }
     }
@@ -319,8 +314,8 @@ public class GameModel
         {
             AmountFrequence++;
             currentMoney.Set(currentMoney.GetValue() - frequencePrice.GetValue());
-            frequencePrice.Add(PERCENT_UPGRADE_FREQUENCE * frequencePrice.GetValue());
-            _camplevel.SelectRandom();
+            frequencePrice.Add(frequencePrice.GetValue() * 2);
+            //_camplevel.SelectRandom();
         }
     }
 
@@ -330,8 +325,8 @@ public class GameModel
         {
             AmountBaratinage++;
             currentMoney.Set(currentMoney.GetValue() - baratinagePrice.GetValue());
-            baratinagePrice.Add(PERCENT_UPGRADE_BARATINAGE * baratinagePrice.GetValue());
-            _camplevel.SelectRandom();
+            baratinagePrice.Add(baratinagePrice.GetValue() * 2);
+            //_camplevel.SelectRandom();
 
         }
     }
@@ -348,8 +343,8 @@ public class GameModel
         {
             AmountUpgradeCharacter++;
             currentMoney.Set(currentMoney.GetValue() - upgradeCharactersPrice.GetValue());
-            upgradeCharactersPrice.Add(PERCENT_UPGRADE_CHARACTERS * upgradeCharactersPrice.GetValue());
-            _camplevel.SelectRandom();
+            upgradeCharactersPrice.Add(upgradeCharactersPrice.GetValue() * 2);
+            //_camplevel.SelectRandom();
 
         }
     }
@@ -360,9 +355,9 @@ public class GameModel
         {
             AmountVenteX2++;
             currentMoney.Set(currentMoney.GetValue() - venteX2Price.GetValue());
-            venteX2Price.Add(PERCENT_UPGRADE_VENTEX2 * venteX2Price.GetValue());
+            venteX2Price.Add(venteX2Price.GetValue() * 2);
 
-            _camplevel.SelectRandom();
+            //_camplevel.SelectRandom();
 
             thresholdWinX2 = Mathf.Clamp(thresholdWinX2 + 1 / AmountVenteX2 * 5, 0, 0.9f);
             thresholdWinX2 += 1 / AmountVenteX2 * 5;

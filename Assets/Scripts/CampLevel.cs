@@ -34,12 +34,13 @@ public class CampLevel : MonoBehaviour
 
     // 
 
-    public void SelectRandom()
+    internal void SelectRandom()
     {
     string[] labels =
       LibraryAsset.GetCategoryLabelNames(targetCategory).ToArray();
     int index = etape++; // faire condition pour pas dépasser 5, et faire de 1 en 1 en changeant le 
     string label = labels[index];
+
     
 
     targetResolver.SetCategoryAndLabel(targetCategory, label);
