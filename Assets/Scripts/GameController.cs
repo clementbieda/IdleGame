@@ -156,10 +156,23 @@ public class GameController : MonoBehaviour
         if (SceneManager.LOAD_GAME)
         {
             string savedMoney = PlayerPrefs.GetString("money");
+            //string savedHitPowerWater = PlayerPrefs.GetString("hitpowerwater");
+            //string savedShopPrizeWater = PlayerPrefs.GetString("shopprizewater");
+            //string savedWaterPrice = PlayerPrefs.GetString("waterprice");
+            //int savedWaterAmount = PlayerPrefs.GetInt("amountwater");
 
             float savedMoneyFloat = float.Parse(savedMoney);
+            //float savedHitFloat = float.Parse(savedHitPowerWater);
+            //float savedShopFloat = float.Parse(savedShopPrizeWater);
+            //float savedWaterFloat = float.Parse(savedWaterPrice);
+            //int savedWaterFloat = int.Parse("savedWaterAmount);
 
             _gameModel.GetMoney().Set(savedMoneyFloat);
+            //_gameModel.GetWater().Set(savedHitFloat);
+            //_gameModel.GetMoney().Set(savedShopFloat);
+            //_gameModel.GetMoney().Set(savedWaterFloat);
+            //_gameModel.GetAmountWater().Set(savedWaterFloat);
+
 
         }
 

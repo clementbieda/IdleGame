@@ -16,6 +16,7 @@ public class SceneManager : MonoBehaviour
     {
         LOAD_GAME = false;
         PlayerPrefs.DeleteKey("money");
+
         PlayerPrefs.Save();
         UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene 1");
         Debug.Log("clique play détecté");
