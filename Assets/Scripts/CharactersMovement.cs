@@ -13,6 +13,11 @@ public class CharactersMovement : MonoBehaviour
     public bool stop = false;
     [SerializeField] SpriteRenderer _characterSprite;
 
+    public bool etatCan = true;
+    public bool etatBandage = true;
+    public bool etatGun = true;
+    public bool etatShield = true;
+
     public int current;
 
     public float currentMoveSpeed;
@@ -27,22 +32,37 @@ public class CharactersMovement : MonoBehaviour
         
     }
 
-    public void Init(List<Transform> waypointsWater, List<Transform> waypointsCan, List<Transform> waypointsBandage, List<Transform> waypointsGun, List<Transform> waypointsShield)
+    public void Init(List<Transform> waypointsWater, List<Transform> waypointsCan, List<Transform> waypointsBandage, List<Transform> waypointsGun, List<Transform> waypointsShield, bool canAvailable, bool bandageAvailable, bool gunAvailable, bool shieldAvailable)
     {
         waypoints = new List<List<Transform>>();
         waypoints.Add(waypointsWater);
-        waypoints.Add(waypointsCan);
-        waypoints.Add(waypointsBandage);
-        waypoints.Add(waypointsGun);
-        waypoints.Add(waypointsShield);
+        if (canAvailable)
+        {
+            waypoints.Add(waypointsCan);
+        }
+        if (bandageAvailable)
+        {
+            waypoints.Add(waypointsBandage);
+        }
+        if (gunAvailable)
+        {
+            waypoints.Add(waypointsGun);
+        }
+        if (shieldAvailable)
+        {
+            waypoints.Add(waypointsShield);
+        }
 
         // ici pour le militaire faut dire que "si le client == MilitairePrefab" alors il faut passer à "Random.Range(3,5)" ou alors garder en compte que les "waypoints de Gun & Shield"
-        current = Random.Range(0, 5);
+        current = Random.Range(0, waypoints.Count);
         transform.position = waypoints[current][waypointIndex].transform.position;
         currentMoveSpeed = standardMoveSpeed;
 
         
     }
+    
+    
+
 
     internal void Play()
     {

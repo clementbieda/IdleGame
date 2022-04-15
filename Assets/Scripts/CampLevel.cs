@@ -88,8 +88,8 @@ public class CampLevel : MonoBehaviour
         }
     }
 
-
-
-
-
+    internal void Available()
+    {
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
 }

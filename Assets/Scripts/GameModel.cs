@@ -1,16 +1,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class GameModel
 {
     private CampLevel _camplevel;
 
-    private Random rnd;
+    private System.Random rnd;
 
-    public float thresholdWinX2;
+    public float thresholdWinX2 = 0.5f;
 
     public float timeManager = 3f;
+
+    public int nbUpgrades = 0;
 
     const float PERCENT_UPGRADE_WATER = 0.15f;
     const float PERCENT_UPGRADE_CAN = 0.24f;
@@ -185,7 +188,7 @@ public class GameModel
 
         moneyIncreasePerSecond = 1;
         x = 0f;
-        thresholdWinX2 = 0.2f;
+        thresholdWinX2 = 0.3f;
 
 
         waterPrice = new FloatObservable(25);
@@ -335,8 +338,8 @@ public class GameModel
 
 
     public bool CheckX2Win()
-    { 
-        return rnd.Next() < thresholdWinX2;
+    {
+        return UnityEngine.Random.Range(0f, 1f) < thresholdWinX2;
     }
 
     public void UpgradeCharacters()
@@ -358,7 +361,12 @@ public class GameModel
             AmountVenteX2++;
             currentMoney.Set(currentMoney.GetValue() - venteX2Price.GetValue());
             venteX2Price.Add(PERCENT_UPGRADE_VENTEX2 * venteX2Price.GetValue());
+
             _camplevel.SelectRandom();
+
+            thresholdWinX2 = Mathf.Clamp(thresholdWinX2 + 1 / AmountVenteX2 * 5, 0, 0.9f);
+            thresholdWinX2 += 1 / AmountVenteX2 * 5;
+
 
         }
     }

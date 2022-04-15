@@ -38,7 +38,10 @@ public class GameController : MonoBehaviour
     [SerializeField] private Button _GunShopButton;
     [SerializeField] private Button _ShieldShopButton;
 
-
+    [SerializeField] private CampLevel _CanShopCampLevel;
+    [SerializeField] private CampLevel _BandageShopCampLevel;
+    [SerializeField] private CampLevel _GunShopCampLevel;
+    [SerializeField] private CampLevel _ShieldShopCampLevel;
 
 
     //Waypoints
@@ -123,7 +126,10 @@ public class GameController : MonoBehaviour
     public int ennemyWave;
     [SerializeField] private float spawnTime;
     public bool isInGame = true;
-
+    [SerializeField] private bool _canAvailable;
+    [SerializeField] private bool _bandageAvailable;
+    [SerializeField] private bool _gunAvailable;
+    [SerializeField] private bool _shieldAvailable;
     public float waveTime;
     // Start is called before the first frame update
 
@@ -219,26 +225,51 @@ public class GameController : MonoBehaviour
     private void OnTriggerShieldShop()
     {
         _gameModel.HitShield();
+        if (_gameModel.CheckX2Win())
+        {
+            _gameModel.HitShield();
+            Debug.Log("VenteX2 !");
+        }
     }
 
     private void OnTriggerGunShop()
     {
         _gameModel.HitGun();
+        if (_gameModel.CheckX2Win())
+        {
+            _gameModel.HitGun();
+            Debug.Log("VenteX2 !");
+        }
     }
 
     private void OnTriggerBandageShop()
     {
         _gameModel.HitBandage();
+        if (_gameModel.CheckX2Win())
+        {
+            _gameModel.HitBandage();
+            Debug.Log("VenteX2 !");
+        }
     }
 
     private void OnTriggerCanShop()
     {
         _gameModel.HitCan();
+        if (_gameModel.CheckX2Win())
+        {
+            _gameModel.HitCan();
+            Debug.Log("VenteX2 !");
+        }
     }
     
     private void OnTriggerWaterShop()
     {
         _gameModel.HitWater();
+        if (_gameModel.CheckX2Win())
+        {
+            _gameModel.HitWater();
+            Debug.Log("VenteX2 !");
+        }
     }
     
     private void spawnClient()
@@ -262,7 +293,7 @@ public class GameController : MonoBehaviour
             obj = GameObject.Instantiate(CharacterPrefab);
         }
         GameObject client = obj;
-        client.GetComponent<CharactersMovement>().Init(_waypointsWater, _waypointsCan, _waypointsBandage, _waypointsGun, _waypointsShield);
+        client.GetComponent<CharactersMovement>().Init(_waypointsWater, _waypointsCan, _waypointsBandage, _waypointsGun, _waypointsShield, _canAvailable, _bandageAvailable, _gunAvailable, _shieldAvailable);
         //Instantiate(CharacterPrefab, new Vector3(-15, -7, 0), Quaternion.identity);
     }
 
@@ -283,21 +314,44 @@ public class GameController : MonoBehaviour
 
     private void UpgradeCan()
     {
+        if (_gameModel.AmountCan.GetValue() == 0)
+        {
+            _CanShopCampLevel.Available();
+            _canAvailable = true;
+        }
         _gameModel.UpgradeCan();
     }
 
     private void UpgradeBandage()
     {
+        if (_gameModel.AmountBandage.GetValue() == 0)
+        {
+            _BandageShopCampLevel.Available();
+
+            _bandageAvailable = true;
+        }
         _gameModel.UpgradeBandage();
     }
 
     private void UpgradeGun()
     {
+        if (_gameModel.AmountGun.GetValue() == 0)
+        {
+            _GunShopCampLevel.Available();
+
+            _gunAvailable = true;
+        }
         _gameModel.UpgradeGun();
     }
 
     private void UpgradeShield()
     {
+        if (_gameModel.AmountShield.GetValue() == 0)
+        {
+            _ShieldShopCampLevel.Available();
+
+            _shieldAvailable = true;
+        }
         _gameModel.UpgradeShield();
     }
 
@@ -364,7 +418,6 @@ public class GameController : MonoBehaviour
     private void UpgradeVenteX2()
     {
         _gameModel.VenteX2();
-        rnd = Random.Range(1, 6);
     }
 
 
