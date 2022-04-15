@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class GameModel
 {
+    private CampLevel _camplevel;
 
     private Random rnd;
 
@@ -304,6 +305,7 @@ public class GameModel
             AmountTempManager++;
             currentMoney.Set(currentMoney.GetValue() - tempManagerPrice.GetValue());
             tempManagerPrice.Add(PERCENT_UPGRADE_TEMP_MANAGER * tempManagerPrice.GetValue());
+            _camplevel.SelectRandom();
             
         }
     }
@@ -315,7 +317,7 @@ public class GameModel
             AmountFrequence++;
             currentMoney.Set(currentMoney.GetValue() - frequencePrice.GetValue());
             frequencePrice.Add(PERCENT_UPGRADE_FREQUENCE * frequencePrice.GetValue());
-            
+            _camplevel.SelectRandom();
         }
     }
 
@@ -326,7 +328,8 @@ public class GameModel
             AmountBaratinage++;
             currentMoney.Set(currentMoney.GetValue() - baratinagePrice.GetValue());
             baratinagePrice.Add(PERCENT_UPGRADE_BARATINAGE * baratinagePrice.GetValue());
-            
+            _camplevel.SelectRandom();
+
         }
     }
 
@@ -343,7 +346,8 @@ public class GameModel
             AmountUpgradeCharacter++;
             currentMoney.Set(currentMoney.GetValue() - upgradeCharactersPrice.GetValue());
             upgradeCharactersPrice.Add(PERCENT_UPGRADE_CHARACTERS * upgradeCharactersPrice.GetValue());
-            
+            _camplevel.SelectRandom();
+
         }
     }
 
@@ -354,7 +358,8 @@ public class GameModel
             AmountVenteX2++;
             currentMoney.Set(currentMoney.GetValue() - venteX2Price.GetValue());
             venteX2Price.Add(PERCENT_UPGRADE_VENTEX2 * venteX2Price.GetValue());
-            
+            _camplevel.SelectRandom();
+
         }
     }
 
