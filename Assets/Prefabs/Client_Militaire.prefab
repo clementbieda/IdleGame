@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stop: 0
+  _characterSprite: {fileID: 1669170555887147074}
   current: 0
   currentMoveSpeed: 0
   standardMoveSpeed: 5

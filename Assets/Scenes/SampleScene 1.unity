@@ -10095,7 +10095,7 @@ MonoBehaviour:
   CharacterPrefab3: {fileID: 8252499692883408523, guid: de688370a8bb530419badec57c36cff7, type: 3}
   MilitairePrefab: {fileID: 1669170555887147075, guid: ed17f5b5023ce2545a2b007af0a1e015, type: 3}
   ennemyWave: 0
-  spawnTime: 2
+  spawnTime: 8
   isInGame: 1
   waveTime: 0
 --- !u!1001 &1475096703

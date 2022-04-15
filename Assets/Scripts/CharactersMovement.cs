@@ -11,6 +11,7 @@ public class CharactersMovement : MonoBehaviour
 
     private List<List<Transform>> waypoints;
     public bool stop = false;
+    [SerializeField] SpriteRenderer _characterSprite;
 
     public int current;
 
@@ -46,6 +47,7 @@ public class CharactersMovement : MonoBehaviour
     internal void Play()
     {
         currentMoveSpeed = standardMoveSpeed;
+        _characterSprite.sortingOrder = 10;
     }
 
     // Update is called once per frame
@@ -79,6 +81,7 @@ public class CharactersMovement : MonoBehaviour
     {
         m_Animator.SetBool("IsWalkingRight", false);
         currentMoveSpeed = 0;
+        _characterSprite.sortingOrder = 9;
         
     }
 }

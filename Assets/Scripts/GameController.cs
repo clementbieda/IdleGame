@@ -322,7 +322,7 @@ public class GameController : MonoBehaviour
     private void UpgradeFrequence()
     {
         _gameModel.FrequenceClients();
-        spawnTime -= 0.5f;
+        spawnTime -= 0.2f;
     }
 
 
